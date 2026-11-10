@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CKSC Champions Trophy 2026 · Apex, NC · 35+ Men's Soccer</title>
+<meta name="description" content="The CKSC Champions Trophy — a 6-team over-35 men's soccer tournament held in a single day in Apex, North Carolina. December 6, 2026. 8v8 format. Hosted by CKSC Football Club.">
+<meta name="theme-color" content="#1C2B52">
+<style>
+:root{--navy-deepest:#080D18;--navy-deep:#111828;--navy:#1C2B52;--navy-mid:#243468;--gold:#B8966B;--gold-light:#D4AD82;--gold-bright:#E8C98A;--gold-dark:#8A6B44;--muted:#8A9BBE;--white:#FFFFFF;--card-bg:#162040;--border:rgba(184,150,107,0.18);--shadow:0 8px 40px rgba(0,0,0,0.55);--radius:14px;--radius-sm:8px;--transition:0.25s cubic-bezier(.4,0,.2,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--navy-deep);color:var(--white);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+button{cursor:pointer;border:none;background:none;font:inherit;}
+h1{font-size:clamp(2rem,6vw,3.8rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;}
+h2{font-size:clamp(1.5rem,4vw,2.4rem);font-weight:700;letter-spacing:-0.01em;}
+h3{font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:600;}
+/* NAV */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:900;background:linear-gradient(rgba(28,43,82,0.62),rgba(17,24,40,0.58)),url('assets/field-aerial.jpg') center 62%/cover no-repeat;border-bottom:1px solid rgba(184,150,107,0.3);height:80px;overflow:hidden;}
+.nav-inner{max-width:none;margin:0;display:flex;align-items:center;justify-content:space-between;padding:0 36px;height:100%;position:relative;z-index:1;}
+.nav-brand{display:flex;align-items:center;gap:16px;}
+.nav-crest{width:68px;height:68px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(184,150,107,0.5));transition:transform var(--transition);}
+.nav-crest:hover{transform:scale(1.08);}
+.nav-title{display:flex;flex-direction:column;gap:2px;}
+.nav-title strong{font-size:1.05rem;font-weight:700;background:linear-gradient(135deg,var(--gold-bright),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-title small{font-size:0.72rem;color:var(--muted);letter-spacing:0.04em;}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;transition:color var(--transition);}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-register{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a1000!important;font-weight:700!important;padding:9px 22px;border-radius:30px;transition:transform var(--transition),box-shadow var(--transition)!important;font-size:0.85rem!important;text-transform:uppercase;letter-spacing:0.06em;}
+.nav-register:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(184,150,107,0.45)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;border-radius:8px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gold);border-radius:2px;transition:var(--transition);}
+.mobile-menu{display:none;position:fixed;top:80px;left:0;right:0;background:rgba(8,13,24,0.98);backdrop-filter:blur(20px);padding:24px;flex-direction:column;gap:16px;border-bottom:1px solid var(--border);z-index:899;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:1.05rem;font-weight:500;color:var(--muted);padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color var(--transition);}
+.mobile-menu a:hover{color:var(--gold-light);}
+.mobile-menu .nav-register{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a1000!important;text-align:center;border-radius:30px;padding:14px;margin-top:8px;border-bottom:none;}
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(160deg,#1C2B52 0%,#111828 55%,#080D18 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:130px 24px 80px;position:relative;overflow:hidden;}
+/* Gold radial glow */
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(184,150,107,0.09) 0%,transparent 70%);pointer-events:none;z-index:1;}
+/* Player silhouette */
+.hero-player{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%;width:auto;max-width:65%;opacity:0.18;filter:invert(1) grayscale(1) contrast(1.4);mix-blend-mode:screen;pointer-events:none;z-index:1;object-fit:contain;object-position:bottom center;}
+.hero-inner{position:relative;z-index:2;max-width:860px;margin:0 auto;text-align:center;}
+.hero-col{position:relative;z-index:1;}
+.hero-center{text-align:center;}
+/* Teams + Raffle panel — seamless continuation of hero background */
+.hero-panel{background:linear-gradient(180deg,#080D18 0%,#111828 100%);padding:60px 48px 72px;}
+.hero-panel-inner{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:stretch;}
+.hero-crest-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;}
+.hero-crest{width:140px;height:140px;object-fit:contain;filter:drop-shadow(0 4px 32px rgba(184,150,107,0.6));animation:crestFloat 6s ease-in-out infinite;}
+@keyframes crestFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.hero-host{display:flex;flex-direction:column;align-items:flex-start;gap:2px;}
+.hero-host .label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;}
+.hero-host .club{font-size:1rem;font-weight:700;color:var(--gold-light);}
+.pill{display:inline-block;background:rgba(184,150,107,0.15);border:1px solid rgba(184,150,107,0.3);color:var(--gold-light);font-size:0.8rem;font-weight:600;padding:5px 16px;border-radius:30px;margin-bottom:20px;letter-spacing:0.06em;text-transform:uppercase;}
+.hero h1{background:linear-gradient(135deg,#ffffff 30%,var(--gold-bright) 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;}
+.hero .lead{font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);max-width:820px;margin:0 auto 40px;line-height:1.7;}
+.countdown{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
+.cd-unit{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 22px;min-width:80px;text-align:center;backdrop-filter:blur(4px);}
+.cd-unit .num{display:block;font-size:2.2rem;font-weight:800;color:var(--gold-bright);line-height:1;}
+.cd-unit .lbl{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px;}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:0.95rem;letter-spacing:0.04em;transition:transform var(--transition),box-shadow var(--transition);}
+.btn:hover{transform:translateY(-2px);}
+.btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1000;box-shadow:0 4px 24px rgba(184,150,107,0.35);}
+.btn-gold:hover{box-shadow:0 8px 36px rgba(184,150,107,0.5);}
+.btn-outline{background:transparent;border:2px solid rgba(184,150,107,0.45);color:var(--gold-light);}
+.btn-outline:hover{border-color:var(--gold);background:rgba(184,150,107,0.08);}
+.btn-yt{background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;box-shadow:0 4px 20px rgba(255,0,0,0.3);}
+.btn-yt:hover{box-shadow:0 8px 32px rgba(255,0,0,0.45);}
+/* SECTIONS */
+.section{padding:96px 36px;max-width:none;margin:0;}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 36px;}
+.section-head{text-align:center;margin-bottom:56px;}
+.section-head .eyebrow{display:inline-block;font-size:0.75rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:12px;}
+.section-head h2{background:linear-gradient(135deg,var(--white) 50%,var(--gold-light) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;}
+.section-head p{color:var(--muted);max-width:760px;margin:0 auto;font-size:1.05rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.4);border-color:rgba(184,150,107,0.35);}
+.card-icon{font-size:2rem;margin-bottom:16px;}
+.card h3{color:var(--gold-light);margin-bottom:10px;}
+.card p{color:var(--muted);font-size:0.95rem;line-height:1.65;}
+/* SCHEDULE */
+.schedule-wrap{background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;}
+.schedule-phase{padding:16px 28px;background:linear-gradient(90deg,var(--navy-mid),var(--navy));font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);border-bottom:1px solid var(--border);}
+.schedule-group-row{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.schedule-group:first-child{border-right:1px solid var(--border);}
+.schedule-group-head{padding:12px 28px;background:rgba(255,255,255,0.03);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.04);}
+.match-row{display:grid;grid-template-columns:60px 1fr auto 1fr 80px;align-items:center;gap:8px;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04);transition:background var(--transition);}
+.match-row:hover{background:rgba(184,150,107,0.05);}
+.match-row:last-child{border-bottom:none;}
+.match-num{font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}
+.match-team{font-size:0.95rem;font-weight:600;color:var(--white);}
+.match-team.away{text-align:right;}
+.match-vs{font-size:0.72rem;font-weight:700;color:var(--gold);text-align:center;min-width:28px;}
+.match-time{font-size:0.8rem;color:var(--muted);text-align:right;white-space:nowrap;}
+.knockout-match{display:grid;grid-template-columns:80px 1fr auto 1fr 100px;align-items:center;gap:12px;padding:18px 28px;border-bottom:1px solid rgba(255,255,255,0.06);transition:background var(--transition);}
+.knockout-match:hover{background:rgba(184,150,107,0.07);}
+.knockout-match.final{background:linear-gradient(90deg,rgba(184,150,107,0.08),rgba(184,150,107,0.04));border-top:2px solid rgba(184,150,107,0.3);border-bottom:none;}
+.match-badge{font-size:0.72rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);}
+.knockout-match.final .match-badge{color:var(--gold-bright);font-size:0.82rem;}
+.knockout-match.final .match-team{color:var(--gold-bright);}
+/* REGISTRATION */
+.reg-card{background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy) 100%);border:1px solid var(--border);border-radius:var(--radius);padding:48px 40px;text-align:center;max-width:860px;margin:0 auto;}
+.reg-card h3{font-size:1.8rem;color:var(--gold-bright);margin-bottom:12px;}
+.reg-card .price{font-size:3rem;font-weight:800;color:var(--white);margin:20px 0 8px;}
+.reg-card .price span{font-size:1.4rem;font-weight:400;color:var(--muted);}
+.reg-card p{color:var(--muted);margin-bottom:32px;}
+.reg-features{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left;margin-bottom:36px;}
+.reg-feature{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:0.9rem;line-height:1.4;}
+.reg-feature::before{content:'\2713';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;}
+/* SPONSORS */
+.sponsor-pricing{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px;}
+.pricing-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center;transition:transform var(--transition),border-color var(--transition);}
+.pricing-card:hover{transform:translateY(-3px);border-color:var(--gold);}
+.pricing-card .tier{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;}
+.pricing-card .amount{font-size:1.8rem;font-weight:800;color:var(--gold-bright);margin-bottom:8px;}
+.pricing-card .perks{font-size:0.82rem;color:var(--muted);line-height:1.5;}
+.pricing-card.featured{border-color:var(--gold);background:linear-gradient(160deg,rgba(184,150,107,0.1),var(--card-bg));}
+.pricing-card.featured .tier{color:var(--gold);}
+.sponsor-tier{margin-bottom:40px;}
+.tier-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.tier-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+.sponsor-slots{display:flex;flex-wrap:wrap;gap:12px;}
+.sponsor-slot{background:var(--card-bg);border:1px dashed rgba(184,150,107,0.3);border-radius:var(--radius-sm);padding:18px 28px;color:var(--muted);font-size:0.85rem;transition:border-color var(--transition),background var(--transition);}
+.sponsor-slot.available:hover{border-color:var(--gold);background:rgba(184,150,107,0.06);color:var(--gold-light);}
+/* ABOUT */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-crest-wrap{display:flex;justify-content:center;}
+.about-crest{width:240px;height:240px;object-fit:contain;filter:drop-shadow(0 8px 48px rgba(184,150,107,0.4));}
+.about-text .eyebrow{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:16px;}
+.about-text h2{margin-bottom:20px;}
+.about-text p{color:var(--muted);margin-bottom:16px;line-height:1.75;}
+.badge-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+.badge{background:rgba(184,150,107,0.1);border:1px solid rgba(184,150,107,0.25);border-radius:30px;padding:6px 16px;font-size:0.8rem;font-weight:600;color:var(--gold-light);}
+/* ====== SCORES / BRACKET SECTION ====== */
+.scores-section{background:rgba(8,13,24,0.6);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+/* Tabs */
+.scores-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.scores-tab{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:30px;padding:11px 28px;color:var(--muted);font-size:0.9rem;font-weight:600;transition:all var(--transition);cursor:pointer;}
+.scores-tab.active{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a1000;border-color:transparent;}
+.scores-tab:hover:not(.active){border-color:var(--gold);color:var(--gold-light);}
+/* Tab panels */
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+/* Standings */
+.bracket-groups{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;}
+.standings-wrap{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.standings-head{padding:14px 20px;background:linear-gradient(90deg,var(--navy-mid),var(--navy));font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);border-bottom:1px solid var(--border);}
+.standings-table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+.standings-table th{padding:9px 10px;text-align:center;font-size:0.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);}
+.standings-table th:first-child{text-align:left;padding-left:16px;min-width:120px;}
+.standings-table td{padding:11px 10px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--white);}
+.standings-table td:first-child{text-align:left;padding-left:16px;font-weight:600;}
+.standings-table tr:last-child td{border-bottom:none;}
+.standings-table .pts-cell{font-weight:800;color:var(--gold-bright);font-size:1rem;}
+.standings-pos{display:inline-flex;width:22px;height:22px;border-radius:50%;font-size:0.7rem;font-weight:700;align-items:center;justify-content:center;margin-right:6px;flex-shrink:0;}
+.standings-pos.q{background:var(--gold);color:#1a1000;}
+.standings-pos.e{background:rgba(255,255,255,0.1);color:var(--muted);}
+.standings-team-cell{display:flex;align-items:center;}
+/* Knockout bracket */
+.bracket-knockout{margin-bottom:48px;}
+.bracket-phase-label{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.bracket-phase-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+.bracket-tree{display:flex;align-items:center;justify-content:center;gap:0;min-height:280px;overflow-x:auto;padding:8px 0;}
+.bracket-sf-col{display:flex;flex-direction:column;gap:20px;}
+.bk-match{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 22px;min-width:230px;transition:border-color var(--transition);}
+.bk-match:hover{border-color:rgba(184,150,107,0.35);}
+.bk-match.final-match{background:linear-gradient(135deg,rgba(184,150,107,0.12),var(--card-bg));border-color:var(--gold);min-width:250px;}
+.bk-match-label{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:12px;}
+.final-match .bk-match-label{color:var(--gold-bright);font-size:0.78rem;}
+.bk-team-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;gap:12px;}
+.bk-team-name{font-size:0.92rem;font-weight:600;color:var(--white);flex:1;}
+.bk-team-score{font-size:1.05rem;font-weight:800;color:var(--gold-bright);min-width:24px;text-align:center;}
+.bk-divider{height:1px;background:rgba(255,255,255,0.07);margin:5px 0;}
+.bk-status{font-size:0.7rem;color:var(--muted);margin-top:9px;text-align:center;}
+.bk-live{color:#22c55e;}
+.bracket-connector{width:56px;display:flex;flex-direction:column;align-self:stretch;}
+.bk-conn-top{flex:1;border-right:2px solid rgba(184,150,107,0.35);border-bottom:2px solid rgba(184,150,107,0.35);border-bottom-right-radius:3px;margin-bottom:-1px;}
+.bk-conn-bot{flex:1;border-right:2px solid rgba(184,150,107,0.35);border-top:2px solid rgba(184,150,107,0.35);border-top-right-radius:3px;margin-top:-1px;}
+.bk-conn-mid{width:56px;height:2px;background:rgba(184,150,107,0.35);flex-shrink:0;}
+.bracket-final-col{display:flex;align-items:center;}
+/* Group stage score cards in bracket */
+.gs-results-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:16px;}
+.gs-group-label{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.gs-group-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+.gs-score-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:8px;}
+.gs-score-teams{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.gs-team{font-size:0.9rem;font-weight:600;color:var(--white);flex:1;}
+.gs-team.away{text-align:right;}
+.gs-score-val{background:rgba(255,255,255,0.08);border-radius:4px;padding:4px 12px;font-size:1rem;font-weight:800;color:var(--gold-bright);white-space:nowrap;}
+.gs-match-meta{font-size:0.68rem;color:var(--muted);text-align:center;margin-top:6px;}
+/* Stats tables */
+.stats-table-wrap{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;max-width:900px;margin:0 auto;}
+.stats-table{width:100%;border-collapse:collapse;}
+.stats-table th{padding:13px 18px;text-align:left;font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);}
+.stats-table th:first-child{width:44px;text-align:center;}
+.stats-table th:last-child{text-align:center;}
+.stats-table td{padding:13px 18px;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--white);}
+.stats-table td:first-child{text-align:center;font-size:0.82rem;font-weight:700;color:var(--muted);}
+.stats-table td:last-child{text-align:center;}
+.stats-table tr:last-child td{border-bottom:none;}
+.stats-table tr:hover td{background:rgba(184,150,107,0.04);}
+.stat-val{font-size:1.3rem;font-weight:800;color:var(--gold-bright);}
+.rank-gold{color:var(--gold-bright)!important;font-size:1rem!important;}
+.rank-silver{color:#C0C0C0!important;font-size:0.9rem!important;}
+.rank-bronze{color:#cd7f32!important;font-size:0.88rem!important;}
+.stats-empty{text-align:center;color:var(--muted);padding:48px 24px;font-size:0.95rem;}
+/* PLAYER SIGN-UP FORM */
+.player-reg-wrap{max-width:860px;margin:0 auto;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group.full{grid-column:1/-1;}
+.form-group label{font-size:0.76rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}
+.form-group input,.form-group select{background:rgba(255,255,255,0.06);border:1px solid rgba(184,150,107,0.25);border-radius:var(--radius-sm);color:var(--white);padding:11px 14px;font-size:0.95rem;font-family:inherit;transition:border-color var(--transition);}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,0.08);}
+.form-group input::placeholder{color:rgba(138,155,190,0.5);}
+.form-group select option{background:var(--navy-deep);color:var(--white);}
+.form-group input[readonly]{opacity:0.65;cursor:default;}
+.form-consent{display:flex;align-items:flex-start;gap:12px;margin:16px 0;font-size:0.88rem;color:var(--muted);line-height:1.55;}
+.form-consent input[type=checkbox]{width:17px;height:17px;flex-shrink:0;accent-color:var(--gold);margin-top:2px;cursor:pointer;}
+.team-prefill-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(184,150,107,0.12);border:1px solid rgba(184,150,107,0.3);color:var(--gold-light);font-size:0.82rem;font-weight:600;padding:7px 18px;border-radius:30px;letter-spacing:0.04em;}
+.reg-success-state{display:none;text-align:center;padding:40px 20px;}
+.reg-success-state.show{display:block;}
+.reg-success-state h3{color:var(--gold-bright);font-size:1.6rem;margin-bottom:14px;}
+.reg-success-state p{color:var(--muted);margin-bottom:24px;line-height:1.7;}
+.waiver-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#1a1000;font-weight:700;font-size:1rem;padding:15px 36px;border-radius:50px;box-shadow:0 4px 24px rgba(184,150,107,0.35);transition:transform var(--transition),box-shadow var(--transition);}
+.waiver-cta:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(184,150,107,0.5);}
+/* ADMIN */
+.admin-panel{display:none;position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--navy-deepest);border:1px solid var(--gold);border-radius:var(--radius);padding:24px;width:380px;max-height:80vh;overflow-y:auto;box-shadow:var(--shadow);}
+.admin-panel.show{display:block;}
+.admin-panel h4{color:var(--gold);font-size:1rem;margin-bottom:4px;}
+.admin-tabs{display:flex;gap:8px;margin-bottom:16px;}
+.admin-tab-btn{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:20px;padding:6px 16px;color:var(--muted);font-size:0.8rem;font-weight:600;cursor:pointer;transition:all var(--transition);}
+.admin-tab-btn.active{background:var(--gold);color:#1a1000;border-color:transparent;}
+.admin-section{display:none;}
+.admin-section.active{display:block;}
+.admin-row{display:flex;gap:8px;align-items:center;margin-bottom:10px;}
+.admin-row label{font-size:0.78rem;color:var(--muted);flex:1;}
+.admin-row input[type=number]{width:52px;background:rgba(255,255,255,0.08);border:1px solid var(--border);border-radius:6px;color:var(--white);padding:6px 8px;font-size:0.95rem;text-align:center;}
+.admin-row select{background:rgba(255,255,255,0.08);border:1px solid var(--border);border-radius:4px;color:var(--white);padding:5px;font-size:0.8rem;}
+.admin-row input[type=text]{flex:1;background:rgba(255,255,255,0.08);border:1px solid var(--border);border-radius:6px;color:var(--white);padding:6px 10px;font-size:0.88rem;}
+.admin-save{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a1000;font-weight:700;padding:10px 20px;border-radius:30px;width:100%;margin-top:8px;font-size:0.9rem;}
+.admin-close{position:absolute;top:12px;right:14px;color:var(--muted);font-size:1.2rem;}
+.admin-divider{height:1px;background:var(--border);margin:12px 0;}
+.admin-stat-list{max-height:160px;overflow-y:auto;margin-bottom:8px;}
+.admin-stat-item{display:flex;justify-content:space-between;align-items:center;padding:6px 8px;background:rgba(255,255,255,0.04);border-radius:6px;margin-bottom:4px;font-size:0.82rem;color:var(--white);}
+.admin-stat-del{color:var(--muted);cursor:pointer;font-size:0.9rem;padding:2px 6px;}
+.admin-stat-del:hover{color:#f87171;}
+/* FOOTER */
+footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding:56px 24px 32px;}
+.footer-inner{max-width:none;margin:0;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;}
+.footer-brand{display:flex;flex-direction:column;gap:16px;}
+.footer-crest{width:72px;object-fit:contain;filter:drop-shadow(0 2px 14px rgba(184,150,107,0.35));}
+.footer-brand p{color:var(--muted);font-size:0.88rem;line-height:1.65;max-width:320px;}
+.footer-col h5{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col li a{color:var(--muted);font-size:0.88rem;transition:color var(--transition);}
+.footer-col li a:hover{color:var(--gold-light);}
+.footer-bottom{max-width:none;margin:40px 0 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{color:var(--muted);font-size:0.8rem;}
+/* MOBILE */
+.mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;background:rgba(8,13,24,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:10px 0 max(10px,env(safe-area-inset-bottom));}
+.mbn-items{display:flex;justify-content:space-around;}
+.mbn-item{display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--muted);font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;padding:4px 12px;transition:color var(--transition);}
+.mbn-item .ico{font-size:1.3rem;}
+.mbn-item:hover{color:var(--gold-light);}
+/* LIVE DOT */
+.live-dot{display:inline-block;width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 1.5s infinite;margin-right:5px;vertical-align:middle;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid-3{grid-template-columns:1fr 1fr;}
+  .about-layout{grid-template-columns:1fr;}
+  .about-crest-wrap{display:none;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+  .sponsor-pricing{grid-template-columns:1fr 1fr;}
+  .schedule-group-row{grid-template-columns:1fr;}
+  .schedule-group:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .knockout-match{grid-template-columns:60px 1fr auto 1fr 90px;gap:8px;}
+  .bracket-groups{grid-template-columns:1fr;}
+  .gs-results-grid{grid-template-columns:1fr;}
+  /* Hero panel: stack on tablet */
+  .hero-panel{padding:40px 24px 52px;}
+  .hero-panel-inner{grid-template-columns:1fr!important;gap:36px;}
+  /* Register 2-col: stack on tablet */
+  #register .section > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .mobile-bottom-nav{display:block;}
+  body{padding-bottom:70px;}
+  .grid-3,.grid-2{grid-template-columns:1fr;}
+  .reg-features{grid-template-columns:1fr;}
+  .sponsor-pricing{grid-template-columns:1fr 1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .match-row{grid-template-columns:48px 1fr auto 1fr 70px;gap:4px;padding:12px 16px;}
+  .match-team{font-size:0.85rem;}
+  .match-time{font-size:0.7rem;}
+  .schedule-phase,.schedule-group-head{padding:12px 16px;}
+  .knockout-match{grid-template-columns:52px 1fr auto 1fr 72px;gap:6px;padding:14px 16px;}
+  .hero-crest{width:100px;height:100px;}
+  .nav-crest{width:54px;height:54px;}
+  .reg-card{padding:32px 20px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .bracket-tree{flex-direction:column;align-items:center;}
+  .bracket-connector{display:none;}
+  .bracket-sf-col{width:100%;}
+  .bk-match{min-width:unset;width:100%;}
+  .bk-match.final-match{min-width:unset;width:100%;}
+  .admin-panel{width:calc(100vw - 24px);right:12px;bottom:80px;}
+
+  /* Hero */
+  .hero{padding:100px 20px 60px;}
+  .hero h1{font-size:2rem;}
+  .hero .lead{font-size:0.95rem;}
+  .cta-row{flex-direction:column;gap:12px;align-items:center;}
+  .cta-row .btn{width:100%;justify-content:center;text-align:center;}
+  .countdown{gap:12px;}
+  .cd-unit .num{font-size:2rem;}
+
+  /* Hero panel — teams + raffle */
+  .hero-panel{padding:32px 16px 48px;}
+  .hero-panel-inner{grid-template-columns:1fr!important;gap:32px;}
+  /* Teams: 2 cols on mobile instead of 3 */
+  .hero-panel-inner > div:first-child > div[style*="repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+
+  /* Sponsorship: 2 cols on mobile */
+  .sponsor-pricing,
+  #sponsors div[style*="repeat(4,1fr)"]{grid-template-columns:1fr 1fr!important;}
+
+  /* Registration 2-col: stack */
+  #register .section > div[style*="grid-template-columns"]{grid-template-columns:1fr!important;}
+
+  /* Section padding */
+  .section{padding:48px 16px;}
+  .section-head{margin-bottom:32px;}
+  .section-head h2{font-size:1.6rem;}
+
+  /* Footer */
+  .footer-inner{gap:24px;}
+  .footer-col{margin-top:0;}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand" aria-label="CKSC Champions Trophy home">
+      <img class="nav-crest" src="assets/cksc-logo.png" alt="CKSC FC Crest">
+      <div class="nav-title"><strong>CKSC Champions Trophy</strong><small>Dec 6, 2026 &middot; Pleasant Park &middot; Apex, NC</small></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#raffle">Raffle</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#scores">Live Scores</a></li>
+      <li><a href="#player-signup">Player Sign-Up</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://www.youtube.com/@cksccorp7582" target="_blank" rel="noopener" style="color:var(--gold-light);">&#9654; Live Stream</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#teams" onclick="closeMenu()">&#9917; Teams</a>
+  <a href="#raffle" onclick="closeMenu()">&#127920; Raffle</a>
+  <a href="#register" onclick="closeMenu()">&#9917; Register</a>
+  <a href="#sponsors" onclick="closeMenu()">&#127885; Sponsors</a>
+  <a href="#scores" onclick="closeMenu()">&#128202; Live Scores</a>
+  <a href="https://www.youtube.com/@cksccorp7582" target="_blank" rel="noopener" onclick="closeMenu()">&#9654; YouTube Stream</a>
+<a href="#about" onclick="closeMenu()">&#127942; About</a>
+</div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <img class="hero-player" src="assets/player-silhouette.jpg" alt="">
+  <div class="hero-inner">
+    <div class="hero-crest-wrap">
+      <img class="hero-crest" src="assets/cksc-logo.png" alt="CKSC Football Club Crest">
+      <div class="hero-host" style="text-align:center;"><span class="label">Hosted by</span><span class="club">CKSC Football Club &middot; Est. 2012</span></div>
+    </div>
+    <div class="pill">&#127942; 2nd Annual &middot; December 6, 2026</div>
+    <h1>CKSC Champions<br>Trophy 2026</h1>
+    <p class="lead">Six elite 35+ men's clubs. One day. Two trophies. 8v8 format, max 15 players per squad. Losing semifinalists automatically compete for the <strong style="color:var(--gold-light);">Challengers Trophy</strong>. Fields 3 &amp; 4, Pleasant Park, Apex, NC.</p>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="cd-unit"><span class="num" id="cd-d">&mdash;</span><span class="lbl">Days</span></div>
+      <div class="cd-unit"><span class="num" id="cd-h">&mdash;</span><span class="lbl">Hours</span></div>
+      <div class="cd-unit"><span class="num" id="cd-m">&mdash;</span><span class="lbl">Min</span></div>
+      <div class="cd-unit"><span class="num" id="cd-s">&mdash;</span><span class="lbl">Sec</span></div>
+    </div>
+    <div class="cta-row">
+      <a href="#register" class="btn btn-gold">&#9917; Register Your Team</a>
+      <a href="https://www.youtube.com/@cksccorp7582" target="_blank" rel="noopener" class="btn btn-yt">&#9654; Watch Live on YouTube</a>
+      <a href="#sponsors" class="btn btn-outline">Become a Sponsor</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAMS + RAFFLE — seamless dark continuation, no divider -->
+<div class="hero-panel">
+  <div class="hero-panel-inner">
+    <!-- LEFT: Teams 2×3 grid -->
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;text-align:center;">2026 Participating Teams</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;align-content:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
+          <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#cc0000,#8b0000);display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:0.7rem;">MDS</div>
+          <div><strong style="font-size:0.9rem;display:block;">MD Strikers</strong><span style="color:var(--muted);font-size:0.72rem;">Maryland</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
+          <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#722F37,#4a1a1f);display:flex;align-items:center;justify-content:center;font-weight:900;color:#D4A017;font-size:0.7rem;">KHL</div>
+          <div><strong style="font-size:0.9rem;display:block;">Khalasis</strong><span style="color:var(--muted);font-size:0.72rem;">Washington, DC</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
+          <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#003087,#001a4d);display:flex;align-items:center;justify-content:center;font-weight:900;color:#ff6300;font-size:0.7rem;">NYC</div>
+          <div><strong style="font-size:0.9rem;display:block;">NY Challengers</strong><span style="color:var(--muted);font-size:0.72rem;">New York</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
+          <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#1a78c2,#0d4a7a);display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:0.7rem;">CLT</div>
+          <div><strong style="font-size:0.9rem;display:block;">Charlotte Minnals</strong><span style="color:var(--muted);font-size:0.72rem;">Charlotte, NC</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(28,43,82,0.9);border:1px solid rgba(184,150,107,0.4);border-radius:14px;padding:28px 14px;text-align:center;">
+          <img src="assets/cksc-logo.png" style="width:68px;height:68px;object-fit:contain;">
+          <div><strong style="font-size:0.9rem;display:block;color:var(--gold-light);">CKSC Warriors</strong><span style="color:var(--muted);font-size:0.72rem;">Apex, NC · Host</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(28,43,82,0.9);border:1px solid rgba(184,150,107,0.4);border-radius:14px;padding:28px 14px;text-align:center;">
+          <img src="assets/gladiators-logo.jpg" style="width:68px;height:68px;object-fit:contain;border-radius:50%;">
+          <div><strong style="font-size:0.9rem;display:block;color:var(--gold-light);">CKSC Gladiators</strong><span style="color:var(--muted);font-size:0.72rem;">Apex, NC · Host</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- RIGHT: Raffle Poster -->
+    <div style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <div style="position:relative;display:inline-block;">
+        <a href="#raffle">
+          <img src="assets/raffle-poster.jpg" alt="CKSC Grand Raffle" style="width:68%;border-radius:14px;border:2px solid rgba(184,150,107,0.4);box-shadow:0 8px 48px rgba(0,0,0,0.65);transition:transform 0.25s;display:block;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <a href="#raffle" style="display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a1000;font-weight:800;padding:12px 28px;border-radius:30px;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;">&#127920; Get Tickets — $10/strip</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+<!-- GLANCE -->
+<section id="glance">
+  <div class="section">
+    <div class="section-head"><span class="eyebrow">Tournament Overview</span><h2>Everything You Need to Know</h2><p>A professional-grade tournament built for the over-35 player who still has game.</p></div>
+    <div class="grid-3">
+      <div class="card"><div class="card-icon">&#128197;</div><h3>December 6, 2026 &middot; Single Day</h3><p>Kickoff at 10:00 AM. Third Place &amp; Final matches in the afternoon. Awards ceremony wraps by 5:30 PM. Fields 3 &amp; 4, Pleasant Park, Apex, NC.</p></div>
+      <div class="card"><div class="card-icon">&#9917;</div><h3>8v8 &middot; 6 Teams &middot; 35+ Men</h3><p>Max 15 players per squad. Two groups of three compete in round-robin, followed by crossover semifinals and a championship final.</p></div>
+      <div class="card"><div class="card-icon">&#128205;</div><h3>Apex, North Carolina</h3><p>Fields 3 &amp; 4, Pleasant Park, Apex, NC. All players must be 35 years of age as of January 31, 2026. Photo ID required at check-in.</p></div>
+      <div class="card"><div class="card-icon">&#9203;</div><h3>Match Durations</h3><p>Group stage: 2 &times; 15-min halves, 5-min halftime. Semifinals, Third Place &amp; Final: 2 &times; 20-min halves, 5-min halftime.</p></div>
+      <div class="card"><div class="card-icon">&#128084;</div><h3>Professional Officials</h3><p>Certified professional referees and linesmen assigned to every match. Highest standard of officiating for all 15 games.</p></div>
+      <div class="card"><div class="card-icon">&#127894;</div><h3>Live Stream &middot; Semis &amp; Final</h3><p>The Semifinals and Championship Final will be live streamed on the <a href="https://www.youtube.com/@cksccorp7582" target="_blank" style="color:var(--gold-light);">CKSC YouTube channel</a>. Photography and videography all day.</p></div>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+<!-- REGISTER -->
+<section id="register">
+  <div class="section">
+    <div class="section-head"><span class="eyebrow">Team Registration</span><h2>Secure Your Spot</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+
+      <!-- LEFT: Fee card + docs -->
+      <div>
+        <div class="reg-card">
+          <h3>Team Entry Fee</h3>
+          <div class="price">$350 <span>/ team</span></div>
+          <p>One-time registration fee covers all group stage + knockout matches for your entire squad of up to 15 players.</p>
+          <div class="reg-features">
+            <div class="reg-feature">8v8 format &middot; max 15-player roster</div>
+            <div class="reg-feature">Official team wristbands</div>
+            <div class="reg-feature">Lunch &amp; dinner for all players</div>
+            <div class="reg-feature">Trophy &amp; medals for champions</div>
+            <div class="reg-feature">Photography &amp; video coverage</div>
+            <div class="reg-feature">Live stream of the Final on YouTube</div>
+            <div class="reg-feature">Professional referees &amp; linesmen</div>
+            <div class="reg-feature">First aid &amp; medical support</div>
+          </div>
+        </div>
+        <div style="margin-top:24px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+          <h3 style="color:var(--gold-light);margin-bottom:10px;">&#128203; Required Documentation</h3>
+          <p style="color:var(--muted);font-size:0.92rem;line-height:1.7;">All players must submit a government-issued photo ID confirming date of birth. Rosters (max 15 players) must be submitted before the deadline. Players must be 35 years of age as of January 31, 2026.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Registration form -->
+      <div id="player-signup">
+        <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+          <h3 style="color:var(--gold-light);margin-bottom:6px;">Register Your Team</h3>
+          <p style="color:var(--muted);font-size:0.88rem;margin-bottom:24px;">Fill in your team manager details. Payment details and waiver links will be sent after confirmation.</p>
+          <form id="signupForm" onsubmit="submitPlayerReg(event)">
+            <input type="hidden" name="_subject" value="CKSC 2026 — Team Registration">
+            <input type="hidden" name="tournament" value="CKSC Champions Trophy 2026">
+            <input type="hidden" name="_to" value="cksccorp@gmail.com">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Team Name *</label>
+                <input type="text" name="team_name" placeholder="Your Club / Team Name" required>
+              </div>
+              <div class="form-group">
+                <label>City / State *</label>
+                <input type="text" name="city_state" placeholder="e.g. Raleigh, NC" required>
+              </div>
+              <div class="form-group">
+                <label>Manager First Name *</label>
+                <input type="text" name="manager_first_name" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label>Manager Last Name *</label>
+                <input type="text" name="manager_last_name" placeholder="Smith" required>
+              </div>
+              <div class="form-group">
+                <label>Manager Email *</label>
+                <input type="email" name="manager_email" placeholder="manager@email.com" required>
+              </div>
+              <div class="form-group">
+                <label>Manager Phone *</label>
+                <input type="tel" name="manager_phone" placeholder="(919) 555-0100" required>
+              </div>
+              <div class="form-group full">
+                <label>Number of Players (max 15) *</label>
+                <input type="number" name="squad_size" placeholder="e.g. 12" min="7" max="15" required>
+              </div>
+              <div class="form-group full">
+                <label>Additional Notes</label>
+                <textarea name="notes" rows="3" placeholder="Any questions or special requests…" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--white);font-size:0.95rem;resize:vertical;"></textarea>
+              </div>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="chk-age" name="age_confirmed" value="yes" required>
+              <label for="chk-age">I confirm that all participants in my team are 35 years of age or older as of January 31, 2026.</label>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="chk-waiver" name="waiver_acknowledged" value="yes" required>
+              <label for="chk-waiver">I acknowledge that all players on my team must sign the liability waiver before the tournament to be eligible to participate.</label>
+            </div>
+            <button type="submit" class="btn btn-gold" id="regSubmitBtn" style="width:100%;justify-content:center;font-size:1rem;padding:15px;margin-top:8px;">
+              &#9917; Submit Team Registration
+            </button>
+          </form>
+          <!-- Success state -->
+          <div class="reg-success-state" id="regSuccess">
+            <div style="font-size:3.5rem;margin-bottom:16px;">&#9989;</div>
+            <h3>Registration Received!</h3>
+            <p>Thanks! We'll be in touch at the manager email with payment details and waiver links.<br><strong style="color:var(--white);">All players must sign the liability waiver</strong> to be eligible to participate.</p>
+            <p style="font-size:0.82rem;color:var(--muted);margin-top:20px;">Questions? <a href="mailto:cksccorp@gmail.com" style="color:var(--gold-light);">cksccorp@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+<!-- TEAMS -->
+<section id="teams">
+  <div class="section">
+    <div class="section-head"><span class="eyebrow">2026 Participating Teams</span><h2>Meet the Competition</h2><p>Six clubs from across the East Coast competing for the Carolina Champions Trophy.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+
+      <!-- MD Strikers -->
+      <div class="card" style="text-align:center;padding:36px 24px;">
+        <div style="width:90px;height:90px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,#cc0000,#8b0000);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(204,0,0,0.35);border:3px solid rgba(255,255,255,0.15);">
+          <span style="font-size:1.6rem;font-weight:900;color:#fff;letter-spacing:-0.02em;">MDS</span>
+        </div>
+        <h3 style="margin-bottom:6px;">MD Strikers</h3>
+        <p style="color:var(--muted);font-size:0.85rem;">&#127988; Maryland</p>
+      </div>
+
+      <!-- Khalasis -->
+      <div class="card" style="text-align:center;padding:36px 24px;">
+        <div style="width:90px;height:90px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,#722F37,#4a1a1f);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(114,47,55,0.4);border:3px solid rgba(212,160,23,0.4);">
+          <span style="font-size:1.6rem;font-weight:900;color:#D4A017;letter-spacing:-0.02em;">KHL</span>
+        </div>
+        <h3 style="margin-bottom:6px;">Khalasis</h3>
+        <p style="color:var(--muted);font-size:0.85rem;">&#127988; Washington, DC</p>
+      </div>
+
+      <!-- NY Challengers -->
+      <div class="card" style="text-align:center;padding:36px 24px;">
+        <div style="width:90px;height:90px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,#003087,#001a4d);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,48,135,0.4);border:3px solid rgba(255,99,0,0.4);">
+          <span style="font-size:1.6rem;font-weight:900;color:#ff6300;letter-spacing:-0.02em;">NYC</span>
+        </div>
+        <h3 style="margin-bottom:6px;">NY Challengers</h3>
+        <p style="color:var(--muted);font-size:0.85rem;">&#127988; New York</p>
+      </div>
+
+      <!-- Charlotte Minnals -->
+      <div class="card" style="text-align:center;padding:36px 24px;">
+        <div style="width:90px;height:90px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,#1a78c2,#0d4a7a);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(26,120,194,0.4);border:3px solid rgba(255,255,255,0.15);">
+          <span style="font-size:1.5rem;font-weight:900;color:#fff;letter-spacing:-0.02em;">CLT</span>
+        </div>
+        <h3 style="margin-bottom:6px;">Charlotte Minnals</h3>
+        <p style="color:var(--muted);font-size:0.85rem;">&#127988; Charlotte, NC</p>
+      </div>
+
+      <!-- CKSC Warriors -->
+      <div class="card" style="text-align:center;padding:36px 24px;border-color:rgba(184,150,107,0.4);background:linear-gradient(135deg,rgba(28,43,82,0.6),rgba(8,13,24,0.8));">
+        <img src="assets/cksc-logo.png" alt="CKSC Warriors" style="width:90px;height:90px;object-fit:contain;margin:0 auto 18px;filter:drop-shadow(0 4px 16px rgba(184,150,107,0.5));">
+        <h3 style="margin-bottom:6px;color:var(--gold-light);">CKSC Warriors</h3>
+        <p style="color:var(--muted);font-size:0.85rem;">&#127968; Apex, NC &mdash; Host</p>
+      </div>
+
+      <!-- CKSC Gladiators -->
+      <div class="card" style="text-align:center;padding:36px 24px;border-color:rgba(184,150,107,0.4);background:linear-gradient(135deg,rgba(28,43,82,0.6),rgba(8,13,24,0.8));">
+        <img src="assets/gladiators-logo.jpg" alt="CKSC Gladiators" style="width:90px;height:90px;object-fit:contain;margin:0 auto 18px;border-radius:50%;filter:drop-shadow(0 4px 16px rgba(184,150,107,0.5));">
+        <h3 style="margin-bottom:6px;color:var(--gold-light);">CKSC Gladiators</h3>
+        <p style="color:var(--muted);font-size:0.85rem;">&#127968; Apex, NC &mdash; Host</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+<!-- SCHEDULE -->
+<section id="schedule" style="background:rgba(8,13,24,0.4);">
+  <div class="section">
+    <div class="section-head"><span class="eyebrow">Match Schedule</span><h2>Schedule Coming Soon</h2><p>The full match schedule will be published once all 6 teams are confirmed. Check back closer to December 6, 2026.</p></div>
+    <div style="text-align:center;padding:48px 24px;background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);max-width:600px;margin:0 auto;">
+      <div style="font-size:3rem;margin-bottom:16px;">&#128197;</div>
+      <h3 style="color:var(--gold-light);margin-bottom:12px;">Schedule Announcement Coming Soon</h3>
+      <p style="color:var(--muted);">Round-robin group stage &middot; Crossover Semifinals &middot; Challengers Trophy &middot; Champions Final<br>All matches at Fields 3 &amp; 4, Pleasant Park, Apex NC &middot; Kickoff 10:00 AM</p>
+    </div>
+    <div style="display:none">
+    <div class="schedule-wrap">
+      <!-- ROUND 1 -->
+      <div class="schedule-phase">&#9654; Round 1 &mdash; 9:00 AM &ndash; 9:35 AM &middot; 2&times;15 min halves &middot; 5 min HT</div>
+      <div class="match-row"><span class="match-num">Field 3<br><small>Grp A</small></span><span class="match-team">Team A1</span><span class="match-vs">VS</span><span class="match-team away">Team A2</span><span class="match-time">9:00 AM</span></div>
+      <div class="match-row" style="border-bottom:none;"><span class="match-num">Field 4<br><small>Grp B</small></span><span class="match-team">Team B1</span><span class="match-vs">VS</span><span class="match-team away">Team B2</span><span class="match-time">9:00 AM</span></div>
+      <!-- BREAK -->
+      <div class="schedule-phase" style="background:rgba(255,255,255,0.03);color:var(--muted);font-size:0.75rem;">&#9719; Break &mdash; 9:35 AM &ndash; 10:20 AM (45 min)</div>
+      <!-- ROUND 2 -->
+      <div class="schedule-phase">&#9654; Round 2 &mdash; 10:20 AM &ndash; 10:55 AM &middot; 2&times;15 min halves &middot; 5 min HT</div>
+      <div class="match-row"><span class="match-num">Field 3<br><small>Grp A</small></span><span class="match-team">Team A1</span><span class="match-vs">VS</span><span class="match-team away">Team A3</span><span class="match-time">10:20 AM</span></div>
+      <div class="match-row" style="border-bottom:none;"><span class="match-num">Field 4<br><small>Grp B</small></span><span class="match-team">Team B1</span><span class="match-vs">VS</span><span class="match-team away">Team B3</span><span class="match-time">10:20 AM</span></div>
+      <!-- BREAK -->
+      <div class="schedule-phase" style="background:rgba(255,255,255,0.03);color:var(--muted);font-size:0.75rem;">&#9719; Break &mdash; 10:55 AM &ndash; 11:40 AM (45 min)</div>
+      <!-- ROUND 3 -->
+      <div class="schedule-phase">&#9654; Round 3 &mdash; 11:40 AM &ndash; 12:15 PM &middot; 2&times;15 min halves &middot; 5 min HT</div>
+      <div class="match-row"><span class="match-num">Field 3<br><small>Grp A</small></span><span class="match-team">Team A2</span><span class="match-vs">VS</span><span class="match-team away">Team A3</span><span class="match-time">11:40 AM</span></div>
+      <div class="match-row" style="border-bottom:none;"><span class="match-num">Field 4<br><small>Grp B</small></span><span class="match-team">Team B2</span><span class="match-vs">VS</span><span class="match-team away">Team B3</span><span class="match-time">11:40 AM</span></div>
+      <!-- LUNCH -->
+      <div class="schedule-phase" style="background:rgba(255,255,255,0.03);color:var(--muted);font-size:0.75rem;">&#127860; Standings &amp; Lunch &mdash; 12:15 PM &ndash; 1:00 PM (45 min) &middot; Finalize standings &middot; Announce semifinalists</div>
+      <!-- SEMIS -->
+      <div class="schedule-phase">&#9917; Semi-Finals &mdash; 1:00 PM &ndash; 1:45 PM &middot; 2&times;20 min halves &middot; 5 min HT</div>
+      <div class="knockout-match"><span class="match-badge">Field 3A<br>Semi 1</span><span class="match-team">Winner Group A</span><span class="match-vs">VS</span><span class="match-team away">Runner-Up Group B</span><span class="match-time">1:00 PM</span></div>
+      <div class="knockout-match"><span class="match-badge">Field 4A<br>Semi 2</span><span class="match-team">Winner Group B</span><span class="match-vs">VS</span><span class="match-team away">Runner-Up Group A</span><span class="match-time">1:00 PM</span></div>
+      <!-- RECOVERY -->
+      <div class="schedule-phase" style="background:rgba(255,255,255,0.03);color:var(--muted);font-size:0.75rem;">&#9851; Recovery Break &mdash; 1:45 PM &ndash; 2:45 PM (60 min) &middot; Penalty Shootout &amp; Crossbar Challenge</div>
+      <!-- FINAL + 3RD PLACE -->
+      <div class="schedule-phase">&#127942; Final &amp; Third Place &mdash; 2:45 PM &ndash; 3:30 PM &middot; 2&times;20 min halves &middot; 5 min HT</div>
+      <div class="knockout-match final"><span class="match-badge">Field 3A<br>&#127942; Final</span><span class="match-team">Winner Semi 1</span><span class="match-vs">VS</span><span class="match-team away">Winner Semi 2</span><span class="match-time">2:45 PM</span></div>
+      <div class="knockout-match" style="border-bottom:none;background:linear-gradient(90deg,rgba(184,150,107,0.04),transparent);"><span class="match-badge" style="color:var(--gold-light);">Field 4A<br>3rd Place</span><span class="match-team">Loser Semi 1</span><span class="match-vs">VS</span><span class="match-team away">Loser Semi 2</span><span class="match-time">2:45 PM</span></div>
+      <!-- AWARDS -->
+      <div class="schedule-phase" style="background:rgba(255,255,255,0.03);color:var(--gold-light);font-size:0.75rem;">&#127941; Awards Ceremony &mdash; 4:45 PM &ndash; 5:15 PM &middot; Champions Trophy &middot; Golden Boot &middot; Golden Glove &middot; MVP &middot; Fair Play</div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:0.85rem;margin-top:20px;">Fields 3 &amp; 4, Pleasant Park, Apex NC &middot; Group stage: 2&times;15 min &middot; Semis, 3rd Place &amp; Final: 2&times;20 min &middot; All matches: 5-min HT &middot; Professional referees &amp; linesmen &middot; Tiebreakers: Points &rarr; GD &rarr; GF &rarr; H2H &middot; Min age 35 as of Jan 31, 2026</p>
+    </div><!-- end hidden schedule wrap -->
+  </div>
+</section>
+<div class="section-divider"></div>
+<!-- RAFFLE -->
+<section id="raffle" style="background:linear-gradient(160deg,#0d1a35 0%,#080D18 60%,#111828 100%);">
+  <div class="section">
+    <div class="section-head">
+      <span class="eyebrow">Grand Raffle Fundraiser</span>
+      <h2>WIN $500+ in Amazing Prizes</h2>
+      <p>Every ticket supports the Carolina Champions Trophy 2026. Buy your strip and get entered into the lucky draw on December 6!</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:40px;">
+      <!-- Prize card -->
+      <div class="card" style="text-align:center;border-color:rgba(184,150,107,0.35);background:linear-gradient(135deg,rgba(22,32,64,0.9),rgba(8,13,24,0.9));">
+        <div style="font-size:2.8rem;margin-bottom:12px;">&#127873;</div>
+        <h3 style="color:var(--gold-bright);font-size:2rem;margin-bottom:6px;">$500+</h3>
+        <p style="color:var(--gold-light);font-weight:600;margin-bottom:8px;">in Amazing Prizes</p>
+        <p style="color:var(--muted);font-size:0.9rem;">Gift cards, merchandise, experiences &amp; surprise prizes to be announced!</p>
+      </div>
+      <!-- Price card -->
+      <div class="card" style="text-align:center;border-color:rgba(220,50,50,0.4);background:linear-gradient(135deg,rgba(80,10,10,0.5),rgba(8,13,24,0.9));">
+        <div style="font-size:2.8rem;margin-bottom:12px;">&#127920;</div>
+        <h3 style="color:#ff6b6b;font-size:2rem;margin-bottom:6px;">$10</h3>
+        <p style="color:#ff9999;font-weight:600;margin-bottom:8px;">Per Strip</p>
+        <p style="color:var(--muted);font-size:0.9rem;">Each strip = multiple ticket numbers. More strips = more chances to win!</p>
+      </div>
+      <!-- Lucky draw card -->
+      <div class="card" style="text-align:center;border-color:rgba(34,197,94,0.35);background:linear-gradient(135deg,rgba(5,40,20,0.7),rgba(8,13,24,0.9));">
+        <div style="font-size:2.8rem;margin-bottom:12px;">&#127941;</div>
+        <h3 style="color:#22c55e;font-size:1.3rem;margin-bottom:6px;">Lucky Draw</h3>
+        <p style="color:#86efac;font-weight:600;margin-bottom:8px;">December 6, 2026</p>
+        <p style="color:var(--muted);font-size:0.9rem;">Winners announced live at the Champions Trophy tournament at Pleasant Park, Apex NC.</p>
+      </div>
+    </div>
+    <!-- How to buy -->
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:40px;max-width:720px;margin:0 auto 32px;">
+      <h3 style="text-align:center;color:var(--gold-light);margin-bottom:28px;font-size:1.3rem;">How to Get Your Tickets</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="background:var(--gold);color:#1a1000;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;">1</span>
+            <strong>Pay via Zelle</strong>
+          </div>
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;">Send $10 per strip to:</p>
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(184,150,107,0.25);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:1.2rem;">&#128247;</span>
+            <div>
+              <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:3px;">Zelle</div>
+              <strong style="color:var(--gold-bright);font-size:1rem;">cksccorp@gmail.com</strong>
+            </div>
+          </div>
+          <p style="color:var(--muted);font-size:0.8rem;margin-top:10px;">Include your name &amp; phone number in the memo.</p>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="background:var(--gold);color:#1a1000;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;">2</span>
+            <strong>Receive via WhatsApp</strong>
+          </div>
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px;">Once payment is confirmed, your raffle ticket strip will be delivered to you via WhatsApp.</p>
+          <div style="background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:1.4rem;">&#128242;</span>
+            <span style="color:#86efac;font-size:0.9rem;font-weight:600;">Tickets delivered via WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CTA -->
+    <div style="text-align:center;">
+      <a href="mailto:cksccorp@gmail.com?subject=Raffle%20Ticket%20Purchase" style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a1000;font-weight:800;padding:16px 40px;border-radius:40px;font-size:1.05rem;letter-spacing:0.04em;text-transform:uppercase;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(184,150,107,0.35);">&#127920; Buy Your Strip — $10</a>
+      <p style="color:var(--muted);font-size:0.82rem;margin-top:14px;">Questions? Email <a href="mailto:cksccorp@gmail.com" style="color:var(--gold-light);">cksccorp@gmail.com</a> &middot; All proceeds support the Carolina Champions Trophy 2026</p>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+<!-- SCORES / BRACKET -->
+<section id="scores" class="scores-section" style="display:none">
+  <div class="section">
+    <div class="section-head">
+      <span class="eyebrow">Tournament Day</span>
+      <h2>Live Scores &amp; Bracket</h2>
+      <p>Live results, standings, and player stats update throughout tournament day.</p>
+    </div>
+    <!-- Tab navigation -->
+    <div class="scores-tabs">
+      <button class="scores-tab active" onclick="switchTab('bracket')">&#127942; Bracket &amp; Results</button>
+      <button class="scores-tab" onclick="switchTab('scorers')">&#9917; Top Scorers</button>
+      <button class="scores-tab" onclick="switchTab('assists')">&#127919; Assists</button>
+    </div>
+    <!-- BRACKET TAB -->
+    <div class="tab-panel active" id="tab-bracket">
+      <!-- Group standings -->
+      <div class="bracket-groups">
+        <div class="standings-wrap">
+          <div class="standings-head">&#127344; Group A Standings</div>
+          <table class="standings-table">
+            <thead><tr><th>Team</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+            <tbody id="standingsA"></tbody>
+          </table>
+        </div>
+        <div class="standings-wrap">
+          <div class="standings-head">&#127345; Group B Standings</div>
+          <table class="standings-table">
+            <thead><tr><th>Team</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+            <tbody id="standingsB"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Knockout bracket tree -->
+      <div class="bracket-knockout">
+        <div class="bracket-phase-label">Knockout Stage</div>
+        <div class="bracket-tree">
+          <div class="bracket-sf-col">
+            <div class="bk-match" id="bk-sf1">
+              <div class="bk-match-label">&#127944; Semi 1 &middot; 4:00 PM</div>
+              <div class="bk-team-row"><span class="bk-team-name" id="bk-sf1-h">Winner Group A</span><span class="bk-team-score" id="bk-sf1-sh">-</span></div>
+              <div class="bk-divider"></div>
+              <div class="bk-team-row"><span class="bk-team-name" id="bk-sf1-a">Runner-Up Group B</span><span class="bk-team-score" id="bk-sf1-sa">-</span></div>
+              <div class="bk-status" id="bk-sf1-st">Pre-Match</div>
+            </div>
+            <div class="bk-match" id="bk-sf2">
+              <div class="bk-match-label">&#127944; Semi 2 &middot; 4:00 PM</div>
+              <div class="bk-team-row"><span class="bk-team-name" id="bk-sf2-h">Winner Group B</span><span class="bk-team-score" id="bk-sf2-sh">-</span></div>
+              <div class="bk-divider"></div>
+              <div class="bk-team-row"><span class="bk-team-name" id="bk-sf2-a">Runner-Up Group A</span><span class="bk-team-score" id="bk-sf2-sa">-</span></div>
+              <div class="bk-status" id="bk-sf2-st">Pre-Match</div>
+            </div>
+          </div>
+          <div class="bracket-connector">
+            <div class="bk-conn-top"></div>
+            <div class="bk-conn-mid"></div>
+            <div class="bk-conn-bot"></div>
+          </div>
+          <div class="bracket-final-col" style="flex-direction:column;gap:16px;">
+            <div class="bk-match final-match" id="bk-final">
+              <div class="bk-match-label">&#127942; Final &middot; Field 3A &middot; 2:45 PM</div>
+              <div class="bk-team-row"><span class="bk-team-name" id="bk-fin-h">Winner Semi 1</span><span class="bk-team-score" id="bk-fin-sh">-</span></div>
+              <div class="bk-divider"></div>
+              <div class="bk-team-row"><span class="bk-team-name" id="bk-fin-a">Winner Semi 2</span><span class="bk-team-score" id="bk-fin-sa">-</span></div>
+              <div class="bk-status" id="bk-fin-st">Pre-Match</div>
+            </div>
+            <div class="bk-match" id="bk-3rd" style="border-color:rgba(184,150,107,0.3);opacity:0.85;">
+              <div class="bk-match-label" style="color:var(--gold-light);">&#127941; 3rd Place &middot; Field 4A &middot; 2:45 PM</div>
+              <div class="bk-team-row"><span class="bk-team-name" id="bk-3rd-h">Loser Semi 1</span><span class="bk-team-score" id="bk-3rd-sh">-</span></div>
+              <div class="bk-divider"></div>
+              <div class="bk-team-row"><span class="bk-team-name" id="bk-3rd-a">Loser Semi 2</span><span class="bk-team-score" id="bk-3rd-sa">-</span></div>
+              <div class="bk-status" id="bk-3rd-st">Pre-Match</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Group stage results -->
+      <div class="bracket-phase-label" style="margin-bottom:20px;">Group Stage Results</div>
+      <div class="gs-results-grid">
+        <div>
+          <div class="gs-group-label">Group A</div>
+          <div id="gs-scores-a"></div>
+        </div>
+        <div>
+          <div class="gs-group-label">Group B</div>
+          <div id="gs-scores-b"></div>
+        </div>
+      </div>
+    </div>
+    <!-- SCORERS TAB -->
+    <div class="tab-panel" id="tab-scorers">
+      <div class="stats-table-wrap">
+        <table class="stats-table">
+          <thead><tr><th>#</th><th>Player</th><th>Team</th><th>Goals</th></tr></thead>
+          <tbody id="scorersList"></tbody>
+        </table>
+        <p class="stats-empty" id="scorersEmpty" style="display:none;">Stats will be updated throughout tournament day.</p>
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:0.82rem;margin-top:16px;" id="scorersMsg">Goal scorer stats will appear here on tournament day.</p>
+    </div>
+    <!-- ASSISTS TAB -->
+    <div class="tab-panel" id="tab-assists">
+      <div class="stats-table-wrap">
+        <table class="stats-table">
+          <thead><tr><th>#</th><th>Player</th><th>Team</th><th>Assists</th></tr></thead>
+          <tbody id="assistsList"></tbody>
+        </table>
+        <p class="stats-empty" id="assistsEmpty" style="display:none;">Stats will be updated throughout tournament day.</p>
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:0.82rem;margin-top:16px;" id="assistsMsg">Assist stats will appear here on tournament day.</p>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+<!-- SPONSORS -->
+<section id="sponsors">
+  <div class="section">
+    <div class="section-head"><span class="eyebrow">Sponsorship</span><h2>Partner With Us</h2><p>Support Triangle-area over-35 soccer. Reach hundreds of players, families, and fans.</p></div>
+    <!-- Sponsorship tiers grid -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px;">
+
+      <!-- Mentions -->
+      <div class="pricing-card" style="display:flex;flex-direction:column;">
+        <div class="tier">Mentions Sponsor</div>
+        <div class="amount">$100</div>
+        <ul style="list-style:none;padding:0;margin:0 0 auto;color:var(--muted);font-size:0.85rem;line-height:1.9;">
+          <li>&#10003; Sponsor name listed in tournament ads, flyers &amp; digital promotions</li>
+        </ul>
+      </div>
+
+      <!-- Silver -->
+      <div class="pricing-card" style="display:flex;flex-direction:column;">
+        <div class="tier">&#129353; Silver Sponsor</div>
+        <div class="amount">$250</div>
+        <ul style="list-style:none;padding:0;margin:0 0 auto;color:var(--muted);font-size:0.85rem;line-height:1.9;">
+          <li>&#10003; Sponsor name featured prominently in ads, flyers &amp; digital promotions</li>
+          <li>&#10003; Recognition announcement during the event</li>
+        </ul>
+      </div>
+
+      <!-- Gold -->
+      <div class="pricing-card" style="display:flex;flex-direction:column;">
+        <div class="tier">&#129352; Gold Sponsor</div>
+        <div class="amount">$500</div>
+        <div style="font-size:0.72rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Runners-Up Trophy Sponsor</div>
+        <ul style="list-style:none;padding:0;margin:0 0 auto;color:var(--muted);font-size:0.85rem;line-height:1.9;">
+          <li>&#10003; Logo on tournament banner, website &amp; app</li>
+          <li>&#10003; Featured recognition in advertising, flyers &amp; print media</li>
+          <li>&#10003; Guest role during awards ceremony</li>
+          <li>&#10003; Two-minute opportunity to introduce your brand</li>
+          <li>&#10003; Present the <strong style="color:var(--white);">Runners-Up Trophy</strong></li>
+        </ul>
+      </div>
+
+      <!-- Platinum -->
+      <div class="pricing-card featured" style="display:flex;flex-direction:column;">
+        <div class="tier">&#127949; Platinum Sponsor</div>
+        <div class="amount">$1,000</div>
+        <div style="font-size:0.72rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Winners Trophy Sponsor</div>
+        <ul style="list-style:none;padding:0;margin:0 0 auto;color:var(--muted);font-size:0.85rem;line-height:1.9;">
+          <li>&#10003; Premier logo placement across all tournament advertising &amp; print media</li>
+          <li>&#10003; Logo on tournament banner, website &amp; app</li>
+          <li>&#10003; Featured recognition during the Finals</li>
+          <li>&#10003; Guest role during awards ceremony</li>
+          <li>&#10003; Two-minute opportunity to introduce your brand</li>
+          <li>&#10003; Present the <strong style="color:var(--gold-light);">Champions Trophy</strong> during the Finals</li>
+        </ul>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-bottom:48px;"><a href="mailto:cksccorp@gmail.com?subject=CKSC%20Champions%20Trophy%202026%20-%20Sponsorship%20Inquiry" class="btn btn-gold">Become a Sponsor &rarr;</a></div>
+    <div class="sponsor-tier"><div class="tier-label">Platinum Sponsors ($1,000)</div><div class="sponsor-slots"><div class="sponsor-slot available">Your Company Here</div></div></div>
+    <div class="sponsor-tier"><div class="tier-label">Gold Sponsors ($500)</div><div class="sponsor-slots"><div class="sponsor-slot available">Your Company Here</div></div></div>
+    <div class="sponsor-tier"><div class="tier-label">Silver Sponsors ($250)</div><div class="sponsor-slots"><div class="sponsor-slot available">Your Company Here</div></div></div>
+    <div class="sponsor-tier"><div class="tier-label">Mentions Sponsors ($100)</div><div class="sponsor-slots"><div class="sponsor-slot available">Your Company Here</div></div></div>
+  </div>
+</section>
+<div class="section-divider"></div>
+<!-- ABOUT -->
+<section id="about" style="background:rgba(8,13,24,0.4);">
+  <div class="section">
+    <div class="about-layout">
+      <div class="about-crest-wrap"><img class="about-crest" src="assets/cksc-logo.png" alt="CKSC Football Club crest"></div>
+      <div class="about-text">
+        <div class="eyebrow">About CKSC Corp</div>
+        <h2>Soccer. Community. Legacy.</h2>
+        <p>CKSC Football Club has been a cornerstone of Triangle-area soccer since its founding in 2012. Built from a shared love of the beautiful game, CKSC has grown into one of the most respected over-35 clubs in the region.</p>
+        <p>The CKSC Champions Trophy was born from a simple belief: the passion for soccer doesn't retire at 35. After a successful inaugural tournament in 2025, the 2026 edition features 6 teams with a 8v8 format, improved facilities, live streaming, and a full-day celebration of the sport.</p>
+        <p>CKSC Corp is a 501(c)(4) social welfare organization. All event proceeds support tournament operations and community soccer initiatives in the Apex/Triangle area.</p>
+        <div class="badge-row"><span class="badge">Est. 2012</span><span class="badge">501(c)(4) Nonprofit</span><span class="badge">Apex, NC</span><span class="badge">35+ Men's Soccer</span><span class="badge">8v8 Format</span><span class="badge">2nd Annual</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section">
+    <div class="section-head"><span class="eyebrow">Get In Touch</span><h2>Questions? We're Here.</h2><p>For registration, sponsorship, volunteering, or general questions &mdash; reach out directly.</p></div>
+    <div class="grid-3" style="max-width:100%;margin:0 auto;">
+      <div class="card" style="text-align:center;"><div class="card-icon">&#128231;</div><h3>Registration</h3><p><a href="mailto:donnyaby@gmail.com?subject=Team%20Registration%20-%20CKSC%20Champions%20Trophy%202026" style="color:var(--gold-light);">Email us to register your team</a></p></div>
+      <div class="card" style="text-align:center;"><div class="card-icon">&#127885;</div><h3>Sponsorship</h3><p><a href="mailto:donnyaby@gmail.com?subject=Sponsorship%20Inquiry%20-%20CKSC%20Champions%20Trophy%202026" style="color:var(--gold-light);">Inquire about sponsorship opportunities</a></p></div>
+      <div class="card" style="text-align:center;"><div class="card-icon">&#9654;</div><h3>Live Stream</h3><p><a href="https://www.youtube.com/@cksccorp7582" target="_blank" rel="noopener" style="color:#ff4444;">Watch the Final on YouTube</a></p></div>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><img class="footer-crest" src="assets/cksc-logo.png" alt="CKSC FC"><p>The CKSC Champions Trophy is organized and operated by CKSC Corp, a 501(c)(4) nonprofit based in Apex, North Carolina. Supporting Triangle-area soccer since 2012.</p></div>
+    <div class="footer-col"><h5>Tournament</h5><ul><li><a href="#glance">Overview</a></li><li><a href="#schedule">Schedule</a></li><li><a href="#raffle">Raffle</a></li><li><a href="#register">Register</a></li></ul></div>
+    <div class="footer-col"><h5>Organization</h5><ul><li><a href="#sponsors">Sponsors</a></li><li><a href="#about">About CKSC</a></li><li><a href="https://www.youtube.com/@cksccorp7582" target="_blank">YouTube Channel</a></li><li><a href="mailto:donnyaby@gmail.com">Email Us</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 CKSC Corp &middot; 501(c)(4) Nonprofit &middot; Apex, NC &middot; All rights reserved.</p><p style="color:var(--gold-dark);">CKSC Football Club &middot; Est. 2012</p></div>
+</footer>
+<!-- MOBILE NAV -->
+<nav class="mobile-bottom-nav" aria-label="Mobile quick navigation">
+  <div class="mbn-items">
+    <a href="#home" class="mbn-item"><span class="ico">&#127968;</span>Home</a>
+    <a href="#schedule" class="mbn-item"><span class="ico">&#128197;</span>Schedule</a>
+    <a href="#register" class="mbn-item"><span class="ico">&#9917;</span>Register</a>
+    <a href="#scores" class="mbn-item"><span class="ico">&#127942;</span>Bracket</a>
+    <a href="https://www.youtube.com/@cksccorp7582" class="mbn-item" target="_blank"><span class="ico">&#9654;</span>Stream</a>
+  </div>
+</nav>
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <button class="admin-close" onclick="closeAdmin()">&#x2715;</button>
+  <h4>&#x2699;&#xFE0F; Tournament Admin</h4>
+  <div class="admin-tabs">
+    <button class="admin-tab-btn active" onclick="switchAdminTab('scores')">Scores</button>
+    <button class="admin-tab-btn" onclick="switchAdminTab('stats')">Player Stats</button>
+    <button class="admin-tab-btn" onclick="switchAdminTab('links')">Reg Links</button>
+  </div>
+  <!-- Scores section -->
+  <div class="admin-section active" id="admin-scores">
+    <div id="adminRows"></div>
+    <button class="admin-save" onclick="saveScores()">&#x1F4BE; Update Scores</button>
+  </div>
+  <!-- Player stats section -->
+  <div class="admin-section" id="admin-stats">
+    <div style="margin-bottom:12px;">
+      <div class="admin-row"><label>Player Name</label><input type="text" id="stat-player" placeholder="Full name"></div>
+      <div class="admin-row"><label>Team</label><select id="stat-team" style="flex:1;background:rgba(255,255,255,0.08);border:1px solid var(--border);border-radius:6px;color:var(--white);padding:6px 8px;font-size:0.85rem;">
+        <option value="MD Strikers">MD Strikers</option><option value="Khalasis">Khalasis</option><option value="NY Challengers">NY Challengers</option>
+        <option value="Charlotte Minnals">Charlotte Minnals</option><option value="CKSC Warriors">CKSC Warriors</option><option value="CKSC Gladiators">CKSC Gladiators</option>
+      </select></div>
+      <div class="admin-row"><label>Goals</label><input type="number" id="stat-goals" value="0" min="0" max="99"></div>
+      <div class="admin-row"><label>Assists</label><input type="number" id="stat-assists" value="0" min="0" max="99"></div>
+      <button class="admin-save" style="margin-top:4px;" onclick="addPlayerStat()">+ Add / Update Player</button>
+    </div>
+    <div class="admin-divider"></div>
+    <div style="font-size:0.75rem;color:var(--muted);margin-bottom:8px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Entered Players</div>
+    <div class="admin-stat-list" id="adminStatList"></div>
+    <button class="admin-save" style="background:rgba(255,255,255,0.08);color:var(--white);" onclick="savePlayerStats()">&#x1F4BE; Save Stats</button>
+  </div>
+  <!-- Registration links section -->
+  <div class="admin-section" id="admin-links">
+    <p style="font-size:0.75rem;color:var(--muted);margin-bottom:14px;line-height:1.6;">Send each team their unique link. Players who open it will have their team pre-filled on the sign-up form.</p>
+    <div id="regLinksList"></div>
+    <div class="admin-divider"></div>
+    <p style="font-size:0.72rem;color:var(--muted);line-height:1.5;">&#9888;&#xFE0F; Set up Formspree first &mdash; replace <code style="color:var(--gold-light);font-size:0.7rem;">REPLACE_WITH_FORMSPREE_ID</code> in the JS, and add your DocuSign/HelloSign link where <code style="color:var(--gold-light);font-size:0.7rem;">WAIVER_LINK_PLACEHOLDER</code> appears.</p>
+  </div>
+</div>
+<script>
+// ── COUNTDOWN ──
+(function(){
+  const target=new Date('2026-12-06T09:00:00-05:00');
+  function update(){
+    const now=new Date();const diff=target-now;
+    if(diff<=0){document.getElementById('countdown').innerHTML='<div class="cd-unit"><span class="num" style="font-size:1.4rem;color:var(--gold-bright)">Trophy Day!</span></div>';return;}
+    const d=Math.floor(diff/86400000);const h=Math.floor((diff%86400000)/3600000);
+    const m=Math.floor((diff%3600000)/60000);const s=Math.floor((diff%60000)/1000);
+    document.getElementById('cd-d').textContent=String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+  }
+  update();setInterval(update,1000);
+})();
+
+// ── MATCH DATA ──
+const MATCHES=[
+  // Round 1 — 9:00 AM
+  {id:'gsa1',label:'R1 · Fld 3',home:'MD Strikers',away:'Khalasis',time:'9:00 AM',group:'A'},
+  {id:'gsb1',label:'R1 · Fld 4',home:'Charlotte Minnals',away:'CKSC Warriors',time:'9:00 AM',group:'B'},
+  // Round 2 — 10:20 AM
+  {id:'gsa2',label:'R2 · Fld 3',home:'MD Strikers',away:'NY Challengers',time:'10:20 AM',group:'A'},
+  {id:'gsb2',label:'R2 · Fld 4',home:'Charlotte Minnals',away:'CKSC Gladiators',time:'10:20 AM',group:'B'},
+  // Round 3 — 11:40 AM
+  {id:'gsa3',label:'R3 · Fld 3',home:'Khalasis',away:'NY Challengers',time:'11:40 AM',group:'A'},
+  {id:'gsb3',label:'R3 · Fld 4',home:'CKSC Warriors',away:'CKSC Gladiators',time:'11:40 AM',group:'B'},
+  // Knockouts
+  {id:'sf1',label:'Semi 1 · Fld 3A',home:'Winner Grp A',away:'Runner-Up Grp B',time:'1:00 PM',group:'KO'},
+  {id:'sf2',label:'Semi 2 · Fld 4A',home:'Winner Grp B',away:'Runner-Up Grp A',time:'1:00 PM',group:'KO'},
+  {id:'3rd',label:'3rd Place · Fld 4A',home:'Loser Semi 1',away:'Loser Semi 2',time:'2:45 PM',group:'KO'},
+  {id:'fin',label:'FINAL · Fld 3A',home:'Winner Semi 1',away:'Winner Semi 2',time:'2:45 PM',group:'KO'}
+];
+const GROUP_A_TEAMS=['MD Strikers','Khalasis','NY Challengers'];
+const GROUP_B_TEAMS=['Charlotte Minnals','CKSC Warriors','CKSC Gladiators'];
+
+// ── STATE ──
+let scores={};
+let playerStats=[];
+try{scores=JSON.parse(localStorage.getItem('cksc_scores')||'{}');}catch(e){}
+try{playerStats=JSON.parse(localStorage.getItem('cksc_stats')||'[]');}catch(e){}
+
+// ── TABS ──
+function switchTab(name){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.scores-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.target.classList.add('active');
+  if(name==='scorers')renderScorers();
+  else if(name==='assists')renderAssists();
+}
+
+// ── STANDINGS COMPUTATION ──
+function computeStandings(group){
+  const teams=group==='A'?GROUP_A_TEAMS:GROUP_B_TEAMS;
+  const matchIds=group==='A'?['gsa1','gsa2','gsa3']:['gsb1','gsb2','gsb3'];
+  const stat={};
+  teams.forEach(t=>{stat[t]={w:0,d:0,l:0,gf:0,ga:0,pts:0};});
+  matchIds.forEach(id=>{
+    const m=MATCHES.find(x=>x.id===id);
+    const sc=scores[id];
+    if(!sc||sc.status==='Pre-Match'||sc.h==='-'||sc.a==='-')return;
+    const h=parseInt(sc.h)||0,a=parseInt(sc.a)||0;
+    stat[m.home].gf+=h;stat[m.home].ga+=a;
+    stat[m.away].gf+=a;stat[m.away].ga+=h;
+    if(h>a){stat[m.home].w++;stat[m.home].pts+=3;stat[m.away].l++;}
+    else if(h<a){stat[m.away].w++;stat[m.away].pts+=3;stat[m.home].l++;}
+    else{stat[m.home].d++;stat[m.home].pts+=1;stat[m.away].d++;stat[m.away].pts+=1;}
+  });
+  return teams.map(t=>({name:t,...stat[t],gd:stat[t].gf-stat[t].ga}))
+    .sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf||a.name.localeCompare(b.name));
+}
+
+// ── RENDER STANDINGS ──
+function renderStandings(){
+  ['A','B'].forEach(grp=>{
+    const rows=computeStandings(grp);
+    const tbody=document.getElementById('standings'+grp);
+    tbody.innerHTML=rows.map((r,i)=>{
+      const q=i<2;
+      return '<tr class="'+(q?'':'')+'"><td><div class="standings-team-cell"><span class="standings-pos '+(q?'q':'e')+'">'+(i+1)+'</span>'+r.name+'</div></td><td>'+r.w+'</td><td>'+r.d+'</td><td>'+r.l+'</td><td>'+r.gf+'</td><td>'+r.ga+'</td><td>'+(r.gd>=0?'+':'')+r.gd+'</td><td class="pts-cell">'+r.pts+'</td></tr>';
+    }).join('');
+  });
+}
+
+// ── RENDER GROUP SCORE CARDS ──
+function renderGroupScores(){
+  ['A','B'].forEach(grp=>{
+    const ids=grp==='A'?['gsa1','gsa2','gsa3']:['gsb1','gsb2','gsb3'];
+    const cont=document.getElementById('gs-scores-'+grp.toLowerCase());
+    cont.innerHTML=ids.map(id=>{
+      const m=MATCHES.find(x=>x.id===id);
+      const sc=scores[id]||{h:'-',a:'-',status:'Pre-Match'};
+      const isLive=sc.status==='Live';const isFT=sc.status==='FT';const isHT=sc.status==='HT';
+      const statusHtml=isLive?'<span class="live-dot"></span>LIVE':isFT?'&#x2713; Full Time':isHT?'Half Time':m.time;
+      return '<div class="gs-score-card"><div class="gs-score-teams"><span class="gs-team">'+m.home+'</span><span class="gs-score-val">'+sc.h+' &ndash; '+sc.a+'</span><span class="gs-team away">'+m.away+'</span></div><div class="gs-match-meta">'+m.label+' &middot; '+statusHtml+'</div></div>';
+    }).join('');
+  });
+}
+
+// ── RENDER BRACKET KNOCKOUTS ──
+function renderBracket(){
+  ['sf1','sf2','3rd','fin'].forEach(id=>{
+    const sc=scores[id]||{h:'-',a:'-',status:'Pre-Match'};
+    const isLive=sc.status==='Live';const isFT=sc.status==='FT';
+    const elId=id==='3rd'?'3rd':id==='fin'?'fin':id;
+    const prefix=id==='fin'?'bk-fin':id==='3rd'?'bk-3rd':'bk-'+id;
+    const sh=document.getElementById(prefix+'-sh');
+    const sa=document.getElementById(prefix+'-sa');
+    const st=document.getElementById(prefix+'-st');
+    if(sh) sh.textContent=sc.h;
+    if(sa) sa.textContent=sc.a;
+    if(st) st.innerHTML=isLive?'<span class="bk-live"><span class="live-dot"></span>LIVE</span>':isFT?(id==='fin'?'&#x2713; Full Time &#127942;':id==='3rd'?'&#x2713; Full Time &#127941;':'&#x2713; Full Time'):'Pre-Match';
+  });
+}
+
+// ── RENDER SCORERS ──
+function renderScorers(){
+  const list=playerStats.filter(p=>p.goals>0).sort((a,b)=>b.goals-a.goals);
+  const tbody=document.getElementById('scorersList');
+  const msg=document.getElementById('scorersMsg');
+  if(list.length===0){tbody.innerHTML='';msg.style.display='';return;}
+  msg.style.display='none';
+  tbody.innerHTML=list.map((p,i)=>{
+    const rankClass=i===0?'rank-gold':i===1?'rank-silver':i===2?'rank-bronze':'';
+    return '<tr><td class="'+rankClass+'">'+(i+1)+'</td><td style="font-weight:600;">'+p.name+'</td><td style="color:var(--muted);">'+p.team+'</td><td><span class="stat-val">'+p.goals+'</span></td></tr>';
+  }).join('');
+}
+
+// ── RENDER ASSISTS ──
+function renderAssists(){
+  const list=playerStats.filter(p=>p.assists>0).sort((a,b)=>b.assists-a.assists);
+  const tbody=document.getElementById('assistsList');
+  const msg=document.getElementById('assistsMsg');
+  if(list.length===0){tbody.innerHTML='';msg.style.display='';return;}
+  msg.style.display='none';
+  tbody.innerHTML=list.map((p,i)=>{
+    const rankClass=i===0?'rank-gold':i===1?'rank-silver':i===2?'rank-bronze':'';
+    return '<tr><td class="'+rankClass+'">'+(i+1)+'</td><td style="font-weight:600;">'+p.name+'</td><td style="color:var(--muted);">'+p.team+'</td><td><span class="stat-val">'+p.assists+'</span></td></tr>';
+  }).join('');
+}
+
+// ── FULL RENDER ──
+function renderAll(){
+  renderStandings();
+  renderGroupScores();
+  renderBracket();
+}
+renderAll();
+
+// ── ADMIN ──
+let adminKeyBuffer='';
+document.addEventListener('keypress',e=>{
+  adminKeyBuffer+=e.key.toLowerCase();
+  if(adminKeyBuffer.length>10)adminKeyBuffer=adminKeyBuffer.slice(-10);
+  if(adminKeyBuffer.includes('ckscadmin')){openAdmin();adminKeyBuffer='';}
+});
+
+function openAdmin(){
+  const rows=document.getElementById('adminRows');
+  rows.innerHTML=MATCHES.map(m=>{
+    const sc=scores[m.id]||{h:'',a:'',status:'Pre-Match'};
+    const hVal=sc.h==='-'?'':sc.h;const aVal=sc.a==='-'?'':sc.a;
+    return '<div class="admin-row"><label style="font-size:0.75rem;">'+m.label+': '+m.home+' v '+m.away+'</label><input type="number" id="ah_'+m.id+'" value="'+hVal+'" min="0" max="99" placeholder="H"><input type="number" id="aa_'+m.id+'" value="'+aVal+'" min="0" max="99" placeholder="A"><select id="as_'+m.id+'"><option '+(sc.status==='Pre-Match'?'selected':'')+'>Pre-Match</option><option '+(sc.status==='Live'?'selected':'')+'>Live</option><option '+(sc.status==='HT'?'selected':'')+'>HT</option><option '+(sc.status==='FT'?'selected':'')+'>FT</option></select></div>';
+  }).join('');
+  renderAdminStatList();
+  document.getElementById('adminPanel').classList.add('show');
+}
+
+function closeAdmin(){document.getElementById('adminPanel').classList.remove('show');}
+
+function saveScores(){
+  MATCHES.forEach(m=>{
+    const h=document.getElementById('ah_'+m.id)?.value;
+    const a=document.getElementById('aa_'+m.id)?.value;
+    const st=document.getElementById('as_'+m.id)?.value;
+    scores[m.id]={h:h!==''?h:'-',a:a!==''?a:'-',status:st};
+  });
+  try{localStorage.setItem('cksc_scores',JSON.stringify(scores));}catch(e){}
+  renderAll();
+  closeAdmin();
+}
+
+// ── ADMIN TABS ──
+function switchAdminTab(name){
+  document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.admin-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('admin-'+name).classList.add('active');
+  event.target.classList.add('active');
+  if(name==='links') renderRegLinks();
+}
+
+// ── PLAYER STATS ADMIN ──
+function addPlayerStat(){
+  const name=document.getElementById('stat-player').value.trim();
+  const team=document.getElementById('stat-team').value;
+  const goals=parseInt(document.getElementById('stat-goals').value)||0;
+  const assists=parseInt(document.getElementById('stat-assists').value)||0;
+  if(!name)return;
+  const existing=playerStats.findIndex(p=>p.name.toLowerCase()===name.toLowerCase()&&p.team===team);
+  if(existing>=0){playerStats[existing].goals+=goals;playerStats[existing].assists+=assists;}
+  else{playerStats.push({name,team,goals,assists});}
+  document.getElementById('stat-player').value='';
+  document.getElementById('stat-goals').value='0';
+  document.getElementById('stat-assists').value='0';
+  renderAdminStatList();
+}
+
+function renderAdminStatList(){
+  const list=document.getElementById('adminStatList');
+  if(playerStats.length===0){list.innerHTML='<div style="color:var(--muted);font-size:0.8rem;padding:8px;">No players entered yet.</div>';return;}
+  list.innerHTML=playerStats.map((p,i)=>'<div class="admin-stat-item"><span>'+p.name+' ('+p.team+')</span><span style="color:var(--gold-light);font-size:0.78rem;">'+p.goals+'G / '+p.assists+'A</span><span class="admin-stat-del" onclick="deletePlayerStat('+i+')">&#128465;</span></div>').join('');
+}
+
+function deletePlayerStat(i){
+  playerStats.splice(i,1);
+  try{localStorage.setItem('cksc_stats',JSON.stringify(playerStats));}catch(e){}
+  renderAdminStatList();
+}
+
+function savePlayerStats(){
+  try{localStorage.setItem('cksc_stats',JSON.stringify(playerStats));}catch(e){}
+  renderScorers();renderAssists();
+  closeAdmin();
+}
+
+// ── PLAYER SIGN-UP ──
+// Config — replace these two values before going live
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/cksccorp@gmail.com';
+const WAIVER_URL   = 'WAIVER_LINK_PLACEHOLDER';    // Your DocuSign / HelloSign link
+
+(function initPlayerReg(){
+  const params = new URLSearchParams(window.location.search);
+  const team = params.get('team');
+  if(team){
+    const inp = document.getElementById('reg-team');
+    if(inp){ inp.value = team; inp.readOnly = true; }
+    const badge = document.getElementById('teamBadge');
+    const txt   = document.getElementById('teamBadgeText');
+    if(badge && txt){ txt.textContent = team; badge.style.display = 'block'; }
+  }
+  const waiverEl = document.getElementById('waiverLink');
+  if(waiverEl && WAIVER_URL !== 'WAIVER_LINK_PLACEHOLDER') waiverEl.href = WAIVER_URL;
+})();
+
+async function submitPlayerReg(e){
+  e.preventDefault();
+  const btn = document.getElementById('regSubmitBtn');
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+  const form = document.getElementById('signupForm');
+  const data = new FormData(form);
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+    });
+    if(res.ok){
+      form.style.display = 'none';
+      document.getElementById('regSuccess').classList.add('show');
+      const waiverEl = document.getElementById('waiverLink');
+      if(waiverEl && WAIVER_URL !== 'WAIVER_LINK_PLACEHOLDER') waiverEl.href = WAIVER_URL;
+    } else {
+      btn.textContent = '✗ Submission failed — try again';
+      btn.disabled = false;
+    }
+  } catch(err){
+    btn.textContent = '✗ Network error — try again';
+    btn.disabled = false;
+  }
+}
+
+// ── REGISTRATION LINKS (ADMIN) ──
+function renderRegLinks(){
+  const teams = [...GROUP_A_TEAMS, ...GROUP_B_TEAMS];
+  const base = window.location.href.replace(/[?#].*$/, '');
+  const list = document.getElementById('regLinksList');
+  list.innerHTML = teams.map(t => {
+    const url = base + '?team=' + encodeURIComponent(t) + '#player-signup';
+    return '<div style="margin-bottom:14px;">'
+      + '<div style="font-size:0.78rem;color:var(--gold-light);font-weight:600;margin-bottom:5px;">&#9917; ' + t + '</div>'
+      + '<div style="display:flex;gap:6px;align-items:center;">'
+      + '<input readonly value="' + url + '" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;color:var(--muted);padding:5px 8px;font-size:0.68rem;min-width:0;">'
+      + '<button onclick="copyRegLink(\'' + url + '\',this)" style="background:rgba(184,150,107,0.15);border:1px solid var(--gold);border-radius:6px;color:var(--gold-light);padding:5px 10px;font-size:0.78rem;cursor:pointer;white-space:nowrap;">Copy</button>'
+      + '</div></div>';
+  }).join('');
+}
+
+function copyRegLink(url, btn){
+  navigator.clipboard.writeText(url).then(()=>{
+    btn.textContent = '✓ Copied!';
+    setTimeout(()=>btn.textContent='Copy', 2000);
+  });
+}
+
+// ── MOBILE MENU ──
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');}
+document.addEventListener('click',e=>{
+  const menu=document.getElementById('mobileMenu');
+  const ham=document.querySelector('.hamburger');
+  if(menu.classList.contains('open')&&!menu.contains(e.target)&&!ham.contains(e.target))closeMenu();
+});
+</script>
+</body>
+</html>
