@@ -55,7 +55,7 @@ h3{font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:600;}
 .hero-center{text-align:center;}
 /* Teams + Raffle panel — seamless continuation of hero background */
 .hero-panel{background:linear-gradient(180deg,#080D18 0%,#111828 100%);padding:60px 48px 72px;}
-.hero-panel-inner{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:stretch;}
+.hero-panel-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:stretch;}
 .hero-crest-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;}
 .hero-crest{width:140px;height:140px;object-fit:contain;filter:drop-shadow(0 4px 32px rgba(184,150,107,0.6));animation:crestFloat 6s ease-in-out infinite;}
 @keyframes crestFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -306,6 +306,7 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
   /* Hero panel: stack on tablet */
   .hero-panel{padding:40px 24px 52px;}
   .hero-panel-inner{grid-template-columns:1fr!important;gap:36px;}
+  .hero-panel-inner > div:last-child{flex-direction:row;flex-wrap:wrap;gap:20px;}
   /* Register 2-col: stack on tablet */
   #register .section > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
 }
@@ -415,20 +416,6 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
 <section class="hero" id="home">
   <img class="hero-player" src="assets/player-silhouette.jpg" alt="">
 
-  <!-- Platinum sponsor — left side -->
-  <div class="hero-sponsor hero-sponsor-left" id="heroSponsorPlatinum">
-    <span class="hsp-label">🏆 Platinum Sponsor</span>
-    <div class="hsp-img">
-      <img src="assets/abu-kuttan.png" alt="Abu Kuttan – Carolina Nest Realty">
-    </div>
-  </div>
-
-  <!-- Gold sponsor — right side -->
-  <div class="hero-sponsor hero-sponsor-right" id="heroSponsorGold">
-    <span class="hsp-label">🥇 Gold Sponsor</span>
-    <span class="hsp-name">Your Company Here</span>
-  </div>
-
   <div class="hero-inner">
     <div class="hero-crest-wrap">
       <img class="hero-crest" src="assets/cksc-logo.png" alt="CKSC Football Club Crest">
@@ -451,9 +438,9 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
   </div>
 </section>
 
-<!-- TEAMS + RAFFLE — seamless dark continuation, no divider -->
+<!-- TEAMS + RAFFLE + SPONSORS — seamless dark continuation, no divider -->
 <div class="hero-panel">
-  <div class="hero-panel-inner">
+  <div class="hero-panel-inner" style="grid-template-columns:1fr 1fr 1fr;">
     <!-- LEFT: Teams 2×3 grid -->
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
       <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;text-align:center;">2026 Participating Teams</div>
@@ -484,13 +471,28 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
         </div>
       </div>
     </div>
-    <!-- RIGHT: Raffle Poster -->
+    <!-- CENTER: Raffle Poster -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
       <div style="position:relative;display:inline-block;">
         <a href="#raffle">
-          <img src="assets/raffle-poster.jpg" alt="CKSC Grand Raffle" style="width:68%;border-radius:14px;border:2px solid rgba(184,150,107,0.4);box-shadow:0 8px 48px rgba(0,0,0,0.65);transition:transform 0.25s;display:block;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <img src="assets/raffle-poster.jpg" alt="CKSC Grand Raffle" style="width:100%;border-radius:14px;border:2px solid rgba(184,150,107,0.4);box-shadow:0 8px 48px rgba(0,0,0,0.65);transition:transform 0.25s;display:block;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         </a>
-        <a href="#raffle" style="display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a1000;font-weight:800;padding:12px 28px;border-radius:30px;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;">&#127920; Get Tickets — $10/strip</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Sponsors -->
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;">
+      <!-- Platinum -->
+      <div style="width:100%;text-align:center;">
+        <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);background:rgba(184,150,107,0.15);border:1px solid rgba(184,150,107,0.35);border-radius:4px;padding:5px 10px;display:inline-block;margin-bottom:12px;">🏆 Platinum Sponsor</div>
+        <a href="tel:9194138473" style="display:block;">
+          <img src="assets/abu-kuttan.png" alt="Abu Kuttan – Carolina Nest Realty" style="width:100%;max-width:260px;border-radius:12px;border:1px solid rgba(184,150,107,0.35);box-shadow:0 4px 24px rgba(0,0,0,0.5);display:block;margin:0 auto;">
+        </a>
+      </div>
+      <!-- Gold -->
+      <div style="width:100%;text-align:center;">
+        <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);background:rgba(184,150,107,0.15);border:1px solid rgba(184,150,107,0.35);border-radius:4px;padding:5px 10px;display:inline-block;margin-bottom:12px;">🥇 Gold Sponsor</div>
+        <a href="#sponsors" style="display:flex;align-items:center;justify-content:center;width:100%;max-width:260px;min-height:80px;border-radius:12px;border:2px dashed rgba(184,150,107,0.3);background:rgba(22,32,64,0.5);color:var(--muted);font-size:0.85rem;font-weight:600;text-align:center;padding:20px;margin:0 auto;transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(184,150,107,0.6)'" onmouseout="this.style.borderColor='rgba(184,150,107,0.3)'">Your Logo Here<br><span style="font-size:0.72rem;color:var(--gold);display:block;margin-top:4px;">Become a Sponsor →</span></a>
       </div>
     </div>
   </div>
