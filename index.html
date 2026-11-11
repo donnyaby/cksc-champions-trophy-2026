@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CKSC Trophy">
+<link rel="apple-touch-icon" href="assets/cksc-logo.png">
+<meta name="theme-color" content="#1C2B52">
 <title>CKSC Champions Trophy 2026 · Apex, NC · 35+ Men's Soccer</title>
 <meta name="description" content="The CKSC Champions Trophy — a 6-team over-35 men's soccer tournament held in a single day in Apex, North Carolina. December 6, 2026. 8v8 format. Hosted by CKSC Football Club.">
 <meta name="theme-color" content="#1C2B52">
@@ -414,7 +420,7 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
       <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;text-align:center;">2026 Participating Teams</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;align-content:center;">
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
-          <img src="assets/md-strikers-logo.png" alt="MD Strikers crest" style="width:68px;height:68px;object-fit:contain;">
+          <img src="assets/md-strikers-logo.png" style="width:68px;height:68px;object-fit:contain;">
           <div><strong style="font-size:0.9rem;display:block;">MD Strikers</strong><span style="color:var(--muted);font-size:0.72rem;">Maryland</span></div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
@@ -572,7 +578,7 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
 
       <!-- MD Strikers -->
       <div class="card" style="text-align:center;padding:36px 24px;">
-        <img src="assets/md-strikers-logo.png" alt="MD Strikers crest" style="width:90px;height:90px;object-fit:contain;margin:0 auto 18px;">
+        <img src="assets/md-strikers-logo.png" alt="MD Strikers" style="width:90px;height:90px;object-fit:contain;margin:0 auto 18px;display:block;filter:drop-shadow(0 4px 16px rgba(204,0,0,0.4));">
         <h3 style="margin-bottom:6px;">MD Strikers</h3>
         <p style="color:var(--muted);font-size:0.85rem;">&#127988; Maryland</p>
       </div>
@@ -1307,6 +1313,15 @@ document.addEventListener('click',e=>{
   const ham=document.querySelector('.hamburger');
   if(menu.classList.contains('open')&&!menu.contains(e.target)&&!ham.contains(e.target))closeMenu();
 });
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log('CKSC PWA: Service worker registered'))
+      .catch(err => console.log('SW error:', err));
+  });
+}
 </script>
 </body>
 </html>

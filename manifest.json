@@ -2,7 +2,7 @@
   "name": "CKSC Champions Trophy 2026",
   "short_name": "CKSC Trophy",
   "description": "6-team 35+ men's soccer tournament. December 6, 2026. Pleasant Park, Apex NC.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#080D18",
