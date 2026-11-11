@@ -442,16 +442,16 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
 <div class="hero-panel">
   <div class="hero-panel-inner" style="grid-template-columns:1fr 1fr 1fr;">
     <!-- LEFT: Teams 2×3 grid -->
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-      <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;text-align:center;">2026 Participating Teams</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;align-content:center;">
+    <div style="display:flex;flex-direction:column;align-items:center;height:100%;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);height:31px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2026 Participating Teams</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;flex:1;align-content:stretch;">
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
           <img src="assets/md-strikers-logo.png" style="width:68px;height:68px;object-fit:contain;">
           <div><strong style="font-size:0.9rem;display:block;">MD Strikers</strong><span style="color:var(--muted);font-size:0.72rem;">Maryland</span></div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
-          <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#722F37,#4a1a1f);display:flex;align-items:center;justify-content:center;font-weight:900;color:#D4A017;font-size:0.7rem;">KHL</div>
-          <div><strong style="font-size:0.9rem;display:block;">Khalasis</strong><span style="color:var(--muted);font-size:0.72rem;">Washington, DC</span></div>
+          <img src="assets/khalasis-logo.png" style="width:68px;height:68px;object-fit:contain;">
+          <div><strong style="font-size:0.9rem;display:block;">Washington Khalazis</strong><span style="color:var(--muted);font-size:0.72rem;">Washington, DC</span></div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(22,32,64,0.85);border:1px solid var(--border);border-radius:14px;padding:28px 14px;text-align:center;">
           <img src="assets/ny-challengers-logo.png" style="width:68px;height:68px;object-fit:contain;">
@@ -472,24 +472,23 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
       </div>
     </div>
     <!-- CENTER: Raffle Poster -->
-    <div style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-      <div style="position:relative;display:inline-block;">
-        <a href="#raffle">
-          <img src="assets/raffle-poster.jpg" alt="CKSC Grand Raffle" style="width:100%;border-radius:14px;border:2px solid rgba(184,150,107,0.4);box-shadow:0 8px 48px rgba(0,0,0,0.65);transition:transform 0.25s;display:block;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        </a>
-      </div>
+    <div style="display:flex;flex-direction:column;height:100%;">
+      <div style="height:31px;flex-shrink:0;"></div>
+      <a href="#raffle" style="display:flex;flex:1;min-height:0;">
+        <img src="assets/raffle-poster.jpg" alt="CKSC Grand Raffle" style="width:100%;height:100%;object-fit:cover;border-radius:14px;border:2px solid rgba(184,150,107,0.4);box-shadow:0 8px 48px rgba(0,0,0,0.65);transition:transform 0.25s;display:block;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      </a>
     </div>
 
     <!-- RIGHT: Sponsors -->
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">
-      <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);background:rgba(184,150,107,0.15);border:1px solid rgba(184,150,107,0.35);border-radius:4px;padding:5px 10px;display:inline-block;">🥇 Gold Sponsors</div>
+    <div style="display:flex;flex-direction:column;align-items:center;height:100%;gap:12px;">
+      <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);background:rgba(184,150,107,0.15);border:1px solid rgba(184,150,107,0.35);border-radius:4px;padding:5px 10px;height:31px;box-sizing:border-box;display:flex;align-items:center;flex-shrink:0;">🥇 Gold Sponsors</div>
       <!-- Abu Kuttan — Gold -->
-      <a href="tel:9194138473" style="display:block;width:100%;">
-        <img src="assets/abu-kuttan.png" alt="Abu Kuttan – Carolina Nest Realty" style="width:100%;border-radius:10px;border:1px solid rgba(184,150,107,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.5);display:block;">
+      <a href="tel:9194138473" style="display:flex;flex:1;min-height:0;width:100%;">
+        <img src="assets/abu-kuttan.png" alt="Abu Kuttan – Carolina Nest Realty" style="width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid rgba(184,150,107,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.5);display:block;">
       </a>
       <!-- VGuard Insurance — Gold -->
-      <a href="tel:19195256440" style="display:block;width:100%;">
-        <img src="assets/vguard-insurance.jpg" alt="VGuard Insurance Agency – Allstate" style="width:100%;border-radius:10px;border:1px solid rgba(184,150,107,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.5);display:block;">
+      <a href="tel:19195256440" style="display:flex;flex:1;min-height:0;width:100%;">
+        <img src="assets/vguard-insurance.jpg" alt="VGuard Insurance Agency – Allstate" style="width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid rgba(184,150,107,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.5);display:block;">
       </a>
     </div>
   </div>
@@ -621,12 +620,10 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
         <p style="color:var(--muted);font-size:0.85rem;">&#127988; Maryland</p>
       </div>
 
-      <!-- Khalasis -->
+      <!-- Washington Khalazis -->
       <div class="card" style="text-align:center;padding:36px 24px;">
-        <div style="width:90px;height:90px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,#722F37,#4a1a1f);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(114,47,55,0.4);border:3px solid rgba(212,160,23,0.4);">
-          <span style="font-size:1.6rem;font-weight:900;color:#D4A017;letter-spacing:-0.02em;">KHL</span>
-        </div>
-        <h3 style="margin-bottom:6px;">Khalasis</h3>
+        <img src="assets/khalasis-logo.png" alt="Washington Khalazis" style="width:90px;height:90px;object-fit:contain;margin:0 auto 18px;display:block;">
+        <h3 style="margin-bottom:6px;">Washington Khalazis</h3>
         <p style="color:var(--muted);font-size:0.85rem;">&#127988; Washington, DC</p>
       </div>
 
@@ -1024,7 +1021,7 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
     <div style="margin-bottom:12px;">
       <div class="admin-row"><label>Player Name</label><input type="text" id="stat-player" placeholder="Full name"></div>
       <div class="admin-row"><label>Team</label><select id="stat-team" style="flex:1;background:rgba(255,255,255,0.08);border:1px solid var(--border);border-radius:6px;color:var(--white);padding:6px 8px;font-size:0.85rem;">
-        <option value="MD Strikers">MD Strikers</option><option value="Khalasis">Khalasis</option><option value="NY Challengers">NY Challengers</option>
+        <option value="MD Strikers">MD Strikers</option><option value="Washington Khalazis">Washington Khalazis</option><option value="NY Challengers">NY Challengers</option>
         <option value="Charlotte Minnals">Charlotte Minnals</option><option value="CKSC Warriors">CKSC Warriors</option><option value="CKSC Gladiators">CKSC Gladiators</option>
       </select></div>
       <div class="admin-row"><label>Goals</label><input type="number" id="stat-goals" value="0" min="0" max="99"></div>
@@ -1064,13 +1061,13 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
 // ── MATCH DATA ──
 const MATCHES=[
   // Round 1 — 9:00 AM
-  {id:'gsa1',label:'R1 · Fld 3',home:'MD Strikers',away:'Khalasis',time:'9:00 AM',group:'A'},
+  {id:'gsa1',label:'R1 · Fld 3',home:'MD Strikers',away:'Washington Khalazis',time:'9:00 AM',group:'A'},
   {id:'gsb1',label:'R1 · Fld 4',home:'Charlotte Minnals',away:'CKSC Warriors',time:'9:00 AM',group:'B'},
   // Round 2 — 10:20 AM
   {id:'gsa2',label:'R2 · Fld 3',home:'MD Strikers',away:'NY Challengers',time:'10:20 AM',group:'A'},
   {id:'gsb2',label:'R2 · Fld 4',home:'Charlotte Minnals',away:'CKSC Gladiators',time:'10:20 AM',group:'B'},
   // Round 3 — 11:40 AM
-  {id:'gsa3',label:'R3 · Fld 3',home:'Khalasis',away:'NY Challengers',time:'11:40 AM',group:'A'},
+  {id:'gsa3',label:'R3 · Fld 3',home:'Washington Khalazis',away:'NY Challengers',time:'11:40 AM',group:'A'},
   {id:'gsb3',label:'R3 · Fld 4',home:'CKSC Warriors',away:'CKSC Gladiators',time:'11:40 AM',group:'B'},
   // Knockouts
   {id:'sf1',label:'Semi 1 · Fld 3A',home:'Winner Grp A',away:'Runner-Up Grp B',time:'1:00 PM',group:'KO'},
@@ -1078,7 +1075,7 @@ const MATCHES=[
   {id:'3rd',label:'3rd Place · Fld 4A',home:'Loser Semi 1',away:'Loser Semi 2',time:'2:45 PM',group:'KO'},
   {id:'fin',label:'FINAL · Fld 3A',home:'Winner Semi 1',away:'Winner Semi 2',time:'2:45 PM',group:'KO'}
 ];
-const GROUP_A_TEAMS=['MD Strikers','Khalasis','NY Challengers'];
+const GROUP_A_TEAMS=['MD Strikers','Washington Khalazis','NY Challengers'];
 const GROUP_B_TEAMS=['Charlotte Minnals','CKSC Warriors','CKSC Gladiators'];
 
 // ── STATE ──
