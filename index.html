@@ -350,6 +350,19 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
   .section-head{margin-bottom:32px;}
   .section-head h2{font-size:1.6rem;}
 
+  /* Teams section 3-col → 2-col on mobile */
+  #teams .section > div[style*="repeat(3,1fr)"]{grid-template-columns:1fr 1fr!important;}
+
+  /* Raffle prize cards 3-col → 1-col on mobile */
+  #raffle div[style*="1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+
+  /* Raffle how-to 2-col → 1-col on mobile */
+  #raffle div[style*="gap:32px"]{grid-template-columns:1fr!important;}
+  #raffle div[style*="padding:40px"]{padding:24px 20px!important;}
+
+  /* Register 2-col → 1-col on mobile */
+  #register .section > div[style*="1fr 1fr"][style*="gap:40px"]{grid-template-columns:1fr!important;}
+
   /* Footer */
   .footer-inner{gap:24px;}
   .footer-col{margin-top:0;}
