@@ -1,19 +1,24 @@
-const CACHE = 'cksc-trophy-v1';
+const CACHE = 'cksc-trophy-v2';
 const ASSETS = [
   '/',
   '/index.html',
+  '/manifest.json',
   '/assets/cksc-logo.png',
   '/assets/raffle-poster.jpg',
-  '/assets/field-aerial.jpg',
-  '/assets/player-silhouette.jpg',
   '/assets/gladiators-logo.jpg',
   '/assets/md-strikers-logo.png'
 ];
 
-// Install — cache all assets
+// Install — cache assets individually so a single 404 doesn't kill the whole SW
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE).then(cache =>
+      Promise.all(
+        ASSETS.map(url =>
+          cache.add(url).catch(err => console.warn('SW: failed to cache', url, err))
+        )
+      )
+    )
   );
   self.skipWaiting();
 });
