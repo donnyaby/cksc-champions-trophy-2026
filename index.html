@@ -383,49 +383,6 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
 </head>
 <body>
 
-<!-- TEASER VIDEO INTRO — shown once per visitor -->
-<div id="teaser-overlay" style="position:fixed;inset:0;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity 0.8s ease;cursor:pointer;" onclick="teaserClick()">
-  <video id="teaser-video" src="assets/CCT2026-web.mp4" playsinline muted preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onended="dismissTeaser()"></video>
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.4) 0%,transparent 50%);pointer-events:none;"></div>
-  <!-- Play prompt shown if autoplay blocked -->
-  <div id="teaser-play-prompt" style="position:absolute;display:none;flex-direction:column;align-items:center;gap:16px;z-index:2;">
-    <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;">
-      <div style="width:0;height:0;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent #fff;margin-left:4px;"></div>
-    </div>
-    <div style="color:rgba(255,255,255,0.7);font-size:12px;letter-spacing:2px;">TAP TO PLAY</div>
-  </div>
-  <button onclick="event.stopPropagation();dismissTeaser()" style="position:absolute;bottom:36px;right:36px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.8);padding:10px 24px;border-radius:4px;font-size:12px;letter-spacing:2px;cursor:pointer;font-family:inherit;">SKIP ›</button>
-</div>
-<script>
-(function(){
-  var key='cksc-teaser-v2';
-  if(localStorage.getItem(key)){
-    document.getElementById('teaser-overlay').style.display='none';
-    return;
-  }
-  localStorage.setItem(key,'1');
-  var v=document.getElementById('teaser-video');
-  v.play().then(function(){
-    // autoplay worked — hide play prompt
-    document.getElementById('teaser-play-prompt').style.display='none';
-  }).catch(function(){
-    // autoplay blocked — show tap-to-play prompt
-    document.getElementById('teaser-play-prompt').style.display='flex';
-  });
-})();
-function teaserClick(){
-  var v=document.getElementById('teaser-video');
-  if(v.paused){
-    v.play();
-    document.getElementById('teaser-play-prompt').style.display='none';
-  }
-}
-function dismissTeaser(){
-  var el=document.getElementById('teaser-overlay');
-  el.style.opacity='0';
-  setTimeout(function(){el.style.display='none';},800);
-}
-</script>
 
 <!-- NAV -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
@@ -464,7 +421,7 @@ function dismissTeaser(){
   <div class="hero-inner">
     <div class="hero-crest-wrap">
       <img class="hero-crest" src="assets/cksc-logo.png" alt="CKSC Football Club Crest">
-      <div class="hero-host" style="text-align:center;"><span class="label">Hosted by</span><span class="club">CKSC Football Club &middot; Est. 2012</span></div>
+      <button onclick="showTeaser()" style="background:rgba(184,150,107,0.12);border:1px solid rgba(184,150,107,0.45);color:#e8c86e;padding:8px 22px;border-radius:20px;font-size:0.78rem;font-weight:700;letter-spacing:2px;cursor:pointer;font-family:inherit;transition:all 0.2s;" onmouseover="this.style.background='rgba(184,150,107,0.22)'" onmouseout="this.style.background='rgba(184,150,107,0.12)'">▶ WATCH TEASER</button>
     </div>
     <div class="pill">&#127942; 2nd Annual &middot; December 6, 2026</div>
     <h1>CKSC Champions<br>Trophy 2026</h1>
@@ -1377,6 +1334,43 @@ if('serviceWorker' in navigator){
       .then(() => console.log('CKSC PWA: Service worker registered'))
       .catch(err => console.log('SW error:', err));
   });
+}
+</script>
+
+<!-- TEASER VIDEO OVERLAY — triggered by button -->
+<div id="teaser-overlay" style="position:fixed;inset:0;z-index:99999;background:#000;display:none;align-items:center;justify-content:center;cursor:pointer;" onclick="teaserClick()">
+  <video id="teaser-video" src="assets/CCT2026-web.mp4" playsinline muted preload="none" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onended="dismissTeaser()"></video>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.4) 0%,transparent 50%);pointer-events:none;"></div>
+  <div id="teaser-play-prompt" style="position:absolute;display:flex;flex-direction:column;align-items:center;gap:16px;z-index:2;">
+    <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;">
+      <div style="width:0;height:0;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent #fff;margin-left:4px;"></div>
+    </div>
+    <div style="color:rgba(255,255,255,0.8);font-size:12px;letter-spacing:2px;font-family:Arial,sans-serif;">TAP TO PLAY</div>
+  </div>
+  <button onclick="event.stopPropagation();dismissTeaser()" style="position:absolute;bottom:36px;right:36px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.8);padding:10px 24px;border-radius:4px;font-size:12px;letter-spacing:2px;cursor:pointer;font-family:inherit;">SKIP ›</button>
+</div>
+<script>
+function showTeaser(){
+  var overlay=document.getElementById('teaser-overlay');
+  var v=document.getElementById('teaser-video');
+  overlay.style.display='flex';
+  document.getElementById('teaser-play-prompt').style.display='flex';
+  v.currentTime=0;
+  v.play().then(function(){
+    document.getElementById('teaser-play-prompt').style.display='none';
+  }).catch(function(){});
+}
+function teaserClick(){
+  var v=document.getElementById('teaser-video');
+  if(v.paused){ v.play(); document.getElementById('teaser-play-prompt').style.display='none'; }
+}
+function dismissTeaser(){
+  var el=document.getElementById('teaser-overlay');
+  var v=document.getElementById('teaser-video');
+  v.pause();
+  el.style.opacity='0';
+  el.style.transition='opacity 0.8s';
+  setTimeout(function(){ el.style.display='none'; el.style.opacity='1'; el.style.transition=''; },800);
 }
 </script>
 </body>
