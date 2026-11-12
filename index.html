@@ -396,8 +396,9 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
     document.getElementById('teaser-overlay').style.display='none';
   } else {
     localStorage.setItem(key,'1');
-    document.getElementById('teaser-video').muted=false;
-    document.getElementById('teaser-video').volume=0.8;
+    // keep muted — browsers require muted for autoplay
+    var v=document.getElementById('teaser-video');
+    v.play().catch(function(){});
   }
 })();
 function dismissTeaser(){

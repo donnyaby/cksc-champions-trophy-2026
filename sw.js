@@ -1,4 +1,4 @@
-const CACHE = 'cksc-trophy-v3';
+const CACHE = 'cksc-trophy-v5';
 const ASSETS = [
   '/assets/cksc-logo.png',
   '/assets/raffle-poster.jpg',
@@ -9,6 +9,7 @@ const ASSETS = [
   '/assets/ny-challengers-logo.png',
   '/assets/abu-kuttan.png',
   '/assets/vguard-insurance.jpg'
+  // CCT2026.mp4 excluded — too large for SW pre-cache
 ];
 
 // Install — pre-cache only images (not HTML/SW/manifest — those stay fresh)
