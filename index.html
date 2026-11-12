@@ -382,6 +382,31 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
 </style>
 </head>
 <body>
+
+<!-- TEASER VIDEO INTRO — shown once per visitor -->
+<div id="teaser-overlay" style="position:fixed;inset:0;z-index:99999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.8s ease;">
+  <video id="teaser-video" src="assets/CCT2026.mp4" autoplay playsinline muted style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onended="dismissTeaser()"></video>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 40%);pointer-events:none;"></div>
+  <button onclick="dismissTeaser()" style="position:absolute;bottom:36px;right:36px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.8);padding:10px 24px;border-radius:4px;font-size:12px;letter-spacing:2px;cursor:pointer;font-family:inherit;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.8)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.35)';this.style.color='rgba(255,255,255,0.8)'">SKIP ›</button>
+</div>
+<script>
+(function(){
+  var key='cksc-teaser-seen';
+  if(localStorage.getItem(key)){
+    document.getElementById('teaser-overlay').style.display='none';
+  } else {
+    localStorage.setItem(key,'1');
+    document.getElementById('teaser-video').muted=false;
+    document.getElementById('teaser-video').volume=0.8;
+  }
+})();
+function dismissTeaser(){
+  var el=document.getElementById('teaser-overlay');
+  el.style.opacity='0';
+  setTimeout(function(){el.style.display='none';},800);
+}
+</script>
+
 <!-- NAV -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
