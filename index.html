@@ -1351,25 +1351,20 @@ if('serviceWorker' in navigator){
   <button onclick="event.stopPropagation();dismissTeaser()" style="position:absolute;bottom:36px;right:36px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.8);padding:10px 24px;border-radius:4px;font-size:12px;letter-spacing:2px;cursor:pointer;font-family:inherit;">SKIP ›</button>
 </div>
 <script>
-// Auto-launch on first visit
-(function(){
-  if(!localStorage.getItem('cksc-teaser-v3')){
-    localStorage.setItem('cksc-teaser-v3','1');
-    window.addEventListener('load', function(){
-      var v=document.getElementById('teaser-video');
-      var overlay=document.getElementById('teaser-overlay');
-      overlay.style.display='flex';
-      v.muted=true; // required for autoplay
-      v.currentTime=0;
-      v.play().then(function(){
-        document.getElementById('teaser-play-prompt').style.display='none';
-        document.getElementById('teaser-unmute-btn').style.display='flex';
-      }).catch(function(){
-        document.getElementById('teaser-play-prompt').style.display='flex';
-      });
-    });
-  }
-})();
+// Auto-launch on every visit
+window.addEventListener('load', function(){
+  var v=document.getElementById('teaser-video');
+  var overlay=document.getElementById('teaser-overlay');
+  overlay.style.display='flex';
+  v.muted=true; // required for autoplay
+  v.currentTime=0;
+  v.play().then(function(){
+    document.getElementById('teaser-play-prompt').style.display='none';
+    document.getElementById('teaser-unmute-btn').style.display='flex';
+  }).catch(function(){
+    document.getElementById('teaser-play-prompt').style.display='flex';
+  });
+});
 function showTeaser(){
   var overlay=document.getElementById('teaser-overlay');
   var v=document.getElementById('teaser-video');
