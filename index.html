@@ -1338,8 +1338,8 @@ if('serviceWorker' in navigator){
 </script>
 
 <!-- TEASER VIDEO OVERLAY — triggered by button -->
-<div id="teaser-overlay" style="position:fixed;inset:0;z-index:99999;background:#000;display:none;align-items:center;justify-content:center;cursor:pointer;" onclick="teaserClick()">
-  <video id="teaser-video" src="assets/CCT2026-web.mp4" playsinline preload="none" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onended="dismissTeaser()"></video>
+<div id="teaser-overlay" style="position:fixed;inset:0;z-index:99999;background:#000;display:none;align-items:center;justify-content:center;cursor:pointer;" onclick="teaserClick(event)">
+  <video id="teaser-video" src="assets/CCT2026-web.mp4" playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onended="dismissTeaser()"></video>
   <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.4) 0%,transparent 50%);pointer-events:none;"></div>
   <div id="teaser-play-prompt" style="position:absolute;display:flex;flex-direction:column;align-items:center;gap:16px;z-index:2;">
     <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;">
@@ -1347,14 +1347,35 @@ if('serviceWorker' in navigator){
     </div>
     <div style="color:rgba(255,255,255,0.8);font-size:12px;letter-spacing:2px;font-family:Arial,sans-serif;">TAP TO PLAY</div>
   </div>
+  <button id="teaser-unmute-btn" onclick="event.stopPropagation();toggleMute()" style="position:absolute;bottom:36px;left:36px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.35);color:#fff;width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;">🔇</button>
   <button onclick="event.stopPropagation();dismissTeaser()" style="position:absolute;bottom:36px;right:36px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.8);padding:10px 24px;border-radius:4px;font-size:12px;letter-spacing:2px;cursor:pointer;font-family:inherit;">SKIP ›</button>
 </div>
 <script>
+// Auto-launch on first visit
+(function(){
+  if(!localStorage.getItem('cksc-teaser-v3')){
+    localStorage.setItem('cksc-teaser-v3','1');
+    window.addEventListener('load', function(){
+      var v=document.getElementById('teaser-video');
+      var overlay=document.getElementById('teaser-overlay');
+      overlay.style.display='flex';
+      v.muted=true; // required for autoplay
+      v.currentTime=0;
+      v.play().then(function(){
+        document.getElementById('teaser-play-prompt').style.display='none';
+        document.getElementById('teaser-unmute-btn').style.display='flex';
+      }).catch(function(){
+        document.getElementById('teaser-play-prompt').style.display='flex';
+      });
+    });
+  }
+})();
 function showTeaser(){
   var overlay=document.getElementById('teaser-overlay');
   var v=document.getElementById('teaser-video');
   overlay.style.display='flex';
   document.getElementById('teaser-play-prompt').style.display='flex';
+  document.getElementById('teaser-unmute-btn').style.display='none';
   v.currentTime=0;
   v.muted=false;
   v.volume=1.0;
@@ -1362,9 +1383,15 @@ function showTeaser(){
     document.getElementById('teaser-play-prompt').style.display='none';
   }).catch(function(){});
 }
-function teaserClick(){
+function teaserClick(e){
   var v=document.getElementById('teaser-video');
   if(v.paused){ v.play(); document.getElementById('teaser-play-prompt').style.display='none'; }
+}
+function toggleMute(){
+  var v=document.getElementById('teaser-video');
+  var btn=document.getElementById('teaser-unmute-btn');
+  v.muted=!v.muted;
+  btn.innerHTML=v.muted?'🔇':'🔊';
 }
 function dismissTeaser(){
   var el=document.getElementById('teaser-overlay');
