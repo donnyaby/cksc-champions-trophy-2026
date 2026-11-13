@@ -280,6 +280,7 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
 /* LIVE DOT */
 .live-dot{display:inline-block;width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 1.5s infinite;margin-right:5px;vertical-align:middle;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+@keyframes goldPulse{0%,100%{box-shadow:0 0 12px rgba(232,200,110,0.25),0 0 0 0 rgba(232,200,110,0.4);}50%{box-shadow:0 0 18px rgba(232,200,110,0.45),0 0 0 6px rgba(232,200,110,0);}}
 /* HERO SPONSOR BADGES */
 .hero-sponsor{position:absolute;top:50%;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;max-width:240px;}
 .hero-sponsor-left{left:16px;}
@@ -421,7 +422,10 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
   <div class="hero-inner">
     <div class="hero-crest-wrap">
       <img class="hero-crest" src="assets/cksc-logo.png" alt="CKSC Football Club Crest">
-      <button onclick="showTeaser()" style="background:rgba(184,150,107,0.12);border:1px solid rgba(184,150,107,0.45);color:#e8c86e;padding:8px 22px;border-radius:20px;font-size:0.78rem;font-weight:700;letter-spacing:2px;cursor:pointer;font-family:inherit;transition:all 0.2s;" onmouseover="this.style.background='rgba(184,150,107,0.22)'" onmouseout="this.style.background='rgba(184,150,107,0.12)'">▶ WATCH TEASER</button>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;">
+        <button onclick="showTeaser()" style="background:rgba(184,150,107,0.12);border:1px solid rgba(184,150,107,0.45);color:#e8c86e;padding:8px 22px;border-radius:20px;font-size:0.78rem;font-weight:700;letter-spacing:2px;cursor:pointer;font-family:inherit;transition:all 0.2s;" onmouseover="this.style.background='rgba(184,150,107,0.22)'" onmouseout="this.style.background='rgba(184,150,107,0.12)'">▶ 2026 TEASER</button>
+        <button onclick="showHighlights()" style="background:linear-gradient(135deg,rgba(184,150,107,0.35),rgba(232,200,110,0.2));border:1px solid rgba(232,200,110,0.7);color:#f5d97a;padding:8px 22px;border-radius:20px;font-size:0.78rem;font-weight:700;letter-spacing:2px;cursor:pointer;font-family:inherit;transition:all 0.2s;box-shadow:0 0 12px rgba(232,200,110,0.25),0 0 0 0 rgba(232,200,110,0.4);animation:goldPulse 2.5s ease-in-out infinite;" onmouseover="this.style.background='linear-gradient(135deg,rgba(184,150,107,0.5),rgba(232,200,110,0.35))'" onmouseout="this.style.background='linear-gradient(135deg,rgba(184,150,107,0.35),rgba(232,200,110,0.2))'">🏆 2025 HIGHLIGHTS</button>
+      </div>
     </div>
     <div class="pill">&#127942; 2nd Annual &middot; December 6, 2026</div>
     <h1>CKSC Champions<br>Trophy 2026</h1>
@@ -467,7 +471,7 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
           <a href="tel:9194138473" style="display:flex;width:100%;height:100%;">
             <img src="assets/abu-kuttan.png" alt="Abu Kuttan – Carolina Nest Realty" style="width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid rgba(184,150,107,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.5);display:block;">
           </a>
-          <svg style="position:absolute;top:-31px;left:-31px;width:62px;height:62px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.7));z-index:2;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="gg" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffe87a"/><stop offset="50%" stop-color="#d4a017"/><stop offset="100%" stop-color="#8a6200"/></radialGradient></defs><polygon points="50.00,4.00 54.96,12.33 61.91,5.57 64.54,14.89 73.00,10.16 73.13,19.85 82.53,17.47 80.15,26.87 89.84,27.00 85.11,35.46 94.43,38.09 87.67,45.04 96.00,50.00 87.67,54.96 94.43,61.91 85.11,64.54 89.84,73.00 80.15,73.13 82.53,82.53 73.13,80.15 73.00,89.84 64.54,85.11 61.91,94.43 54.96,87.67 50.00,96.00 45.04,87.67 38.09,94.43 35.46,85.11 27.00,89.84 26.87,80.15 17.47,82.53 19.85,73.13 10.16,73.00 14.89,64.54 5.57,61.91 12.33,54.96 4.00,50.00 12.33,45.04 5.57,38.09 14.89,35.46 10.16,27.00 19.85,26.87 17.47,17.47 26.87,19.85 27.00,10.16 35.46,14.89 38.09,5.57 45.04,12.33" fill="url(#gg)"/><circle cx="50" cy="50" r="30" fill="none" stroke="#8a6200" stroke-width="1.5" opacity="0.6"/><text x="50" y="47" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="900" fill="#1a0e00" letter-spacing="1">GOLD</text><text x="50" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#3a2000" letter-spacing="2">SPONSOR</text></svg>
+          <svg style="position:absolute;top:-31px;left:-31px;width:62px;height:62px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.7));z-index:2;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="gg"cx="40%" cy="35%"><stop offset="0%" stop-color="#ffe87a"/><stop offset="50%" stop-color="#d4a017"/><stop offset="100%" stop-color="#8a6200"/></radialGradient></defs><polygon points="50.00,4.00 54.96,12.33 61.91,5.57 64.54,14.89 73.00,10.16 73.13,19.85 82.53,17.47 80.15,26.87 89.84,27.00 85.11,35.46 94.43,38.09 87.67,45.04 96.00,50.00 87.67,54.96 94.43,61.91 85.11,64.54 89.84,73.00 80.15,73.13 82.53,82.53 73.13,80.15 73.00,89.84 64.54,85.11 61.91,94.43 54.96,87.67 50.00,96.00 45.04,87.67 38.09,94.43 35.46,85.11 27.00,89.84 26.87,80.15 17.47,82.53 19.85,73.13 10.16,73.00 14.89,64.54 5.57,61.91 12.33,54.96 4.00,50.00 12.33,45.04 5.57,38.09 14.89,35.46 10.16,27.00 19.85,26.87 17.47,17.47 26.87,19.85 27.00,10.16 35.46,14.89 38.09,5.57 45.04,12.33" fill="url(#gg)"/><circle cx="50" cy="50" r="30" fill="none" stroke="#8a6200" stroke-width="1.5" opacity="0.6"/><text x="50" y="47" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="900" fill="#1a0e00" letter-spacing="1">GOLD</text><text x="50" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#3a2000" letter-spacing="2">SPONSOR</text></svg>
         </div>
         <!-- VGuard Insurance — Gold -->
         <div style="position:relative;overflow:visible;">
@@ -486,7 +490,7 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
         <!-- Real Carolina Properties — Silver -->
         <div style="position:relative;overflow:visible;">
           <a href="tel:9194507920" style="display:flex;width:100%;height:100%;">
-            <img src="assets/real-carolina-blended.jpg" alt="Real Carolina Properties – Biju Parayil" style="width:100%;height:100%;object-fit:contain;border-radius:10px;border:1px solid rgba(160,168,184,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.5);display:block;background:#0f1830;">
+            <img src="assets/real-carolina-properties.jpg" alt="Real Carolina Properties – Biju Parayil" style="width:100%;height:100%;object-fit:contain;border-radius:10px;border:1px solid rgba(160,168,184,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.5);display:block;background:#0f1830;">
           </a>
           <svg style="position:absolute;top:-31px;left:-31px;width:62px;height:62px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.7));z-index:2;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="sg2" cx="40%" cy="35%"><stop offset="0%" stop-color="#f0f4ff"/><stop offset="50%" stop-color="#a8b8cc"/><stop offset="100%" stop-color="#5a6a7a"/></radialGradient></defs><polygon points="50.00,4.00 54.96,12.33 61.91,5.57 64.54,14.89 73.00,10.16 73.13,19.85 82.53,17.47 80.15,26.87 89.84,27.00 85.11,35.46 94.43,38.09 87.67,45.04 96.00,50.00 87.67,54.96 94.43,61.91 85.11,64.54 89.84,73.00 80.15,73.13 82.53,82.53 73.13,80.15 73.00,89.84 64.54,85.11 61.91,94.43 54.96,87.67 50.00,96.00 45.04,87.67 38.09,94.43 35.46,85.11 27.00,89.84 26.87,80.15 17.47,82.53 19.85,73.13 10.16,73.00 14.89,64.54 5.57,61.91 12.33,54.96 4.00,50.00 12.33,45.04 5.57,38.09 14.89,35.46 10.16,27.00 19.85,26.87 17.47,17.47 26.87,19.85 27.00,10.16 35.46,14.89 38.09,5.57 45.04,12.33" fill="url(#sg2)"/><circle cx="50" cy="50" r="30" fill="none" stroke="#5a6a7a" stroke-width="1.5" opacity="0.6"/><text x="50" y="45" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="900" fill="#0a0f1a" letter-spacing="1">SILVER</text><text x="50" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#1a2030" letter-spacing="2">SPONSOR</text></svg>
         </div>
@@ -1344,6 +1348,20 @@ if('serviceWorker' in navigator){
 }
 </script>
 
+<!-- HIGHLIGHTS VIDEO OVERLAY — triggered by 2025 highlights button -->
+<div id="highlights-overlay" style="position:fixed;inset:0;z-index:99999;background:#000;display:none;align-items:center;justify-content:center;cursor:pointer;" onclick="highlightsClick(event)">
+  <video id="highlights-video" src="assets/CCT2025-highlights.mp4" playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onended="dismissHighlights()"></video>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.4) 0%,transparent 50%);pointer-events:none;"></div>
+  <div id="highlights-play-prompt" style="position:absolute;display:flex;flex-direction:column;align-items:center;gap:16px;z-index:2;">
+    <div style="width:72px;height:72px;border-radius:50%;background:rgba(232,200,110,0.15);border:2px solid rgba(232,200,110,0.7);display:flex;align-items:center;justify-content:center;">
+      <div style="width:0;height:0;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent #e8c86e;margin-left:4px;"></div>
+    </div>
+    <div style="color:rgba(232,200,110,0.9);font-size:12px;letter-spacing:2px;font-family:Arial,sans-serif;">2025 HIGHLIGHTS</div>
+  </div>
+  <button id="highlights-unmute-btn" onclick="event.stopPropagation();document.getElementById('highlights-video').muted=!document.getElementById('highlights-video').muted;this.innerHTML=document.getElementById('highlights-video').muted?'🔇':'🔊';" style="position:absolute;bottom:36px;left:36px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.35);color:#fff;width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;">🔇</button>
+  <button onclick="event.stopPropagation();dismissHighlights()" style="position:absolute;bottom:36px;right:36px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.8);padding:10px 24px;border-radius:4px;font-size:12px;letter-spacing:2px;cursor:pointer;font-family:inherit;">CLOSE ›</button>
+</div>
+
 <!-- TEASER VIDEO OVERLAY — triggered by button -->
 <div id="teaser-overlay" style="position:fixed;inset:0;z-index:99999;background:#000;display:none;align-items:center;justify-content:center;cursor:pointer;" onclick="teaserClick(event)">
   <video id="teaser-video" src="assets/CCT2026-web.mp4" playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onended="dismissTeaser()"></video>
@@ -1398,6 +1416,29 @@ function toggleMute(){
 function dismissTeaser(){
   var el=document.getElementById('teaser-overlay');
   var v=document.getElementById('teaser-video');
+  v.pause();
+  el.style.opacity='0';
+  el.style.transition='opacity 0.8s';
+  setTimeout(function(){ el.style.display='none'; el.style.opacity='1'; el.style.transition=''; },800);
+}
+function showHighlights(){
+  var overlay=document.getElementById('highlights-overlay');
+  var v=document.getElementById('highlights-video');
+  overlay.style.display='flex';
+  v.currentTime=0;
+  v.muted=true;
+  v.play().catch(function(){});
+  document.getElementById('highlights-play-prompt').style.display='flex';
+  document.getElementById('highlights-unmute-btn').style.display='none';
+}
+function highlightsClick(e){
+  var v=document.getElementById('highlights-video');
+  if(v.paused){ v.play(); document.getElementById('highlights-play-prompt').style.display='none'; }
+  else { v.muted=!v.muted; document.getElementById('highlights-unmute-btn').innerHTML=v.muted?'🔇':'🔊'; }
+}
+function dismissHighlights(){
+  var el=document.getElementById('highlights-overlay');
+  var v=document.getElementById('highlights-video');
   v.pause();
   el.style.opacity='0';
   el.style.transition='opacity 0.8s';
