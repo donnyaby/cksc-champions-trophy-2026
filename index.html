@@ -1427,7 +1427,10 @@ function showHighlights(){
   overlay.style.display='flex';
   v.currentTime=0;
   v.muted=true;
-  v.play().catch(function(){});
+  v.play().then(function(){
+    document.getElementById('highlights-play-prompt').style.display='none';
+    document.getElementById('highlights-unmute-btn').style.display='flex';
+  }).catch(function(){});
   document.getElementById('highlights-play-prompt').style.display='flex';
   document.getElementById('highlights-unmute-btn').style.display='none';
 }
