@@ -593,7 +593,10 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
         <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
           <h3 style="color:var(--gold-light);margin-bottom:6px;">Register Your Team</h3>
           <p style="color:var(--muted);font-size:0.88rem;margin-bottom:12px;">Fill in your team manager details. Payment details and waiver links will be sent after confirmation.</p>
-          <p style="font-size:0.88rem;margin-bottom:24px;background:rgba(184,150,107,0.08);border:1px solid rgba(184,150,107,0.25);border-radius:8px;padding:10px 14px;color:var(--gold-light);">💳 <strong>Registration payment via Zelle:</strong> <span style="color:var(--white);">cksccorp@gmail.com</span></p>
+          <div style="font-size:0.88rem;margin-bottom:24px;background:rgba(184,150,107,0.08);border:1px solid rgba(184,150,107,0.25);border-radius:8px;padding:12px 14px;color:var(--gold-light);">
+            <div style="margin-bottom:8px;">💳 <strong>Registration payment via Zelle:</strong> <span style="color:var(--white);">cksccorp@gmail.com</span></div>
+            <div style="color:var(--muted);font-size:0.82rem;">Send payment then enter your Zelle confirmation number below to unlock the submit button.</div>
+          </div>
           <form id="signupForm" onsubmit="submitPlayerReg(event)">
             <input type="hidden" name="_subject" value="CKSC 2026 — Team Registration">
             <input type="hidden" name="tournament" value="CKSC Champions Trophy 2026">
@@ -640,7 +643,11 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
               <input type="checkbox" id="chk-waiver" name="waiver_acknowledged" value="yes" required>
               <label for="chk-waiver">I acknowledge that all players on my team must sign the liability waiver before the tournament to be eligible to participate.</label>
             </div>
-            <button type="submit" class="btn btn-gold" id="regSubmitBtn" style="width:100%;justify-content:center;font-size:1rem;padding:15px;margin-top:8px;">
+            <div class="form-group full" style="margin-top:8px;">
+              <label style="color:var(--gold-light);">Zelle Confirmation Number * <span style="color:var(--muted);font-weight:400;font-size:0.8rem;">(required to submit)</span></label>
+              <input type="text" id="zelleConfirm" name="zelle_confirmation" placeholder="Enter your Zelle confirmation number" oninput="toggleRegBtn()" style="border-color:rgba(184,150,107,0.4);">
+            </div>
+            <button type="submit" class="btn btn-gold" id="regSubmitBtn" disabled style="width:100%;justify-content:center;font-size:1rem;padding:15px;margin-top:8px;opacity:0.4;cursor:not-allowed;">
               &#9917; Submit Team Registration
             </button>
           </form>
@@ -648,7 +655,7 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
           <div class="reg-success-state" id="regSuccess">
             <div style="font-size:3.5rem;margin-bottom:16px;">&#9989;</div>
             <h3>Registration Received!</h3>
-            <p>Thanks! We'll be in touch via email with the waiver links.In the meantime please submit your registration payment if you haven't already.<br><strong style="color:var(--white);">All players must sign the liability waiver</strong> to be eligible to participate.</p>
+            <p>Thanks! We'll be in touch at the manager email with payment details and waiver links.<br><strong style="color:var(--white);">All players must sign the liability waiver</strong> to be eligible to participate.</p>
             <p style="font-size:0.82rem;color:var(--muted);margin-top:20px;">Questions? <a href="mailto:cksccorp@gmail.com" style="color:var(--gold-light);">cksccorp@gmail.com</a></p>
           </div>
         </div>
@@ -1288,6 +1295,13 @@ const WAIVER_URL   = 'WAIVER_LINK_PLACEHOLDER';    // Your DocuSign / HelloSign 
   if(waiverEl && WAIVER_URL !== 'WAIVER_LINK_PLACEHOLDER') waiverEl.href = WAIVER_URL;
 })();
 
+function toggleRegBtn(){
+  var val = document.getElementById('zelleConfirm').value.trim();
+  var btn = document.getElementById('regSubmitBtn');
+  btn.disabled = val.length === 0;
+  btn.style.opacity = val.length === 0 ? '0.4' : '1';
+  btn.style.cursor = val.length === 0 ? 'not-allowed' : 'pointer';
+}
 async function submitPlayerReg(e){
   e.preventDefault();
   const btn = document.getElementById('regSubmitBtn');
