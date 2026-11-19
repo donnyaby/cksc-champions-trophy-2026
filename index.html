@@ -592,8 +592,8 @@ footer{background:var(--navy-deepest);border-top:1px solid var(--border);padding
       <div id="player-signup">
         <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
           <h3 style="color:var(--gold-light);margin-bottom:6px;">Register Your Team</h3>
-          <p style="color:var(--muted);font-size:0.88rem;margin-bottom:12px;">Fill in your team manager details. Waiver links will be sent after confirmation and payment.</p>
-          <p style="font-size:0.88rem;margin-bottom:24px;background:rgba(184,150,107,0.08);border:1px solid rgba(184,150,107,0.25);border-radius:8px;padding:10px 14px;color:var(--gold-light);animation:goldPulse 2.5s ease-in-out infinite;">💳 <strong>Registration payment via Zelle (add your team name to payment Description):</strong> <span style="color:var(--white);">cksccorp@gmail.com</span></p>
+          <p style="color:var(--muted);font-size:0.88rem;margin-bottom:12px;">Fill in your team manager details. Payment details and waiver links will be sent after confirmation.</p>
+          <p style="font-size:0.88rem;margin-bottom:24px;background:rgba(184,150,107,0.08);border:1px solid rgba(184,150,107,0.25);border-radius:8px;padding:10px 14px;color:var(--gold-light);">💳 <strong>Registration payment via Zelle:</strong> <span style="color:var(--white);">cksccorp@gmail.com</span></p>
           <form id="signupForm" onsubmit="submitPlayerReg(event)">
             <input type="hidden" name="_subject" value="CKSC 2026 — Team Registration">
             <input type="hidden" name="tournament" value="CKSC Champions Trophy 2026">
@@ -1271,7 +1271,7 @@ function savePlayerStats(){
 
 // ── PLAYER SIGN-UP ──
 // Config — replace these two values before going live
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/cksccorp@gmail.com';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xbgokerj';
 const WAIVER_URL   = 'WAIVER_LINK_PLACEHOLDER';    // Your DocuSign / HelloSign link
 
 (function initPlayerReg(){
