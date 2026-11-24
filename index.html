@@ -1135,8 +1135,32 @@ const GROUP_B_TEAMS=['Charlotte Minnals','CKSC Warriors','CKSC Gladiators'];
 // ── STATE ──
 let scores={};
 let playerStats=[];
-try{scores=JSON.parse(localStorage.getItem('cksc_scores')||'{}');}catch(e){}
-try{playerStats=JSON.parse(localStorage.getItem('cksc_stats')||'[]');}catch(e){}
+
+// ── FIREBASE LIVE SCORES ──
+(function initFirebase(){
+  const fbConfig={
+    apiKey:"AIzaSyDJk-ae9kiEXXPYzGh_QyCoDy8jj-HEWmg",
+    authDomain:"cct2026.firebaseapp.com",
+    projectId:"cct2026",
+    storageBucket:"cct2026.firebasestorage.app",
+    messagingSenderId:"199513723345",
+    appId:"1:199513723345:web:d14d469af57819eb9fd0f0",
+    databaseURL:"https://cct2026-default-rtdb.firebaseio.com"
+  };
+  import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js').then(({initializeApp})=>{
+    import('https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js').then(({getDatabase,ref,onValue})=>{
+      const app=initializeApp(fbConfig,'viewer');
+      const db=getDatabase(app);
+      onValue(ref(db,'scores'),(snap)=>{
+        const data=snap.val();
+        if(data){
+          scores=data;
+          renderAll();
+        }
+      });
+    });
+  }).catch(()=>{});
+})();
 
 // ── TABS ──
 function switchTab(name){

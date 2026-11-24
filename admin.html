@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCT 2026 · Admin Panel</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0f1c;color:#e0e6f0;min-height:100vh;}
+
+/* PASSWORD OVERLAY */
+#pw-overlay{position:fixed;inset:0;background:#0a0f1c;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;padding:24px;}
+#pw-overlay h1{color:#e8c86e;font-size:1.4rem;text-align:center;}
+#pw-overlay p{color:#8090a8;font-size:0.85rem;text-align:center;}
+#pw-input{background:#111828;border:1px solid #2a3448;border-radius:10px;padding:14px 18px;color:#fff;font-size:1.1rem;width:100%;max-width:320px;text-align:center;letter-spacing:3px;}
+#pw-input:focus{outline:none;border-color:#e8c86e;}
+#pw-btn{background:#e8c86e;color:#0a0f1c;border:none;border-radius:10px;padding:14px 32px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;max-width:320px;}
+#pw-error{color:#ff6b6b;font-size:0.85rem;display:none;}
+
+/* HEADER */
+.admin-header{background:#111828;border-bottom:1px solid #1e2d44;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.admin-header h1{color:#e8c86e;font-size:1.1rem;font-weight:800;letter-spacing:1px;}
+.sync-status{font-size:0.75rem;color:#4a6080;display:flex;align-items:center;gap:6px;}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:#4a6080;}
+.sync-dot.ok{background:#4caf50;}
+.sync-dot.err{background:#ff5252;}
+
+/* CONTAINER */
+.admin-body{padding:16px;max-width:700px;margin:0 auto;}
+
+/* SECTION LABEL */
+.phase-label{font-size:0.7rem;font-weight:700;letter-spacing:2px;color:#4a6080;text-transform:uppercase;margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid #1e2d44;}
+
+/* MATCH CARD */
+.match-card{background:#111828;border:1px solid #1e2d44;border-radius:14px;padding:16px;margin-bottom:12px;transition:border-color 0.2s;}
+.match-card.live{border-color:#e8c86e;box-shadow:0 0 16px rgba(232,200,110,0.15);}
+.match-card.ft{border-color:#2a3a2a;}
+.match-meta{font-size:0.72rem;color:#4a6080;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
+.match-meta span{font-weight:600;}
+
+/* SCORE ROW */
+.score-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.team-name{flex:1;font-size:0.88rem;font-weight:600;color:#c8d8f0;}
+.team-name.away{text-align:right;}
+.score-input{width:52px;height:52px;background:#0d1525;border:1px solid #2a3448;border-radius:10px;color:#fff;font-size:1.5rem;font-weight:700;text-align:center;-moz-appearance:textfield;}
+.score-input::-webkit-outer-spin-button,.score-input::-webkit-inner-spin-button{-webkit-appearance:none;}
+.score-input:focus{outline:none;border-color:#e8c86e;background:#111828;}
+.vs{color:#4a6080;font-size:0.85rem;font-weight:600;flex-shrink:0;}
+
+/* CARDS ROW */
+.cards-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.card-btn-group{display:flex;align-items:center;gap:6px;background:#0d1525;border-radius:8px;padding:6px 10px;flex:1;min-width:120px;}
+.card-btn-group label{font-size:0.7rem;color:#4a6080;white-space:nowrap;}
+.card-counter{display:flex;align-items:center;gap:6px;margin-left:auto;}
+.card-count{font-size:0.95rem;font-weight:700;min-width:20px;text-align:center;}
+.card-count.yellow{color:#f5c518;}
+.card-count.red{color:#ff5252;}
+.counter-btn{width:26px;height:26px;border-radius:6px;border:none;cursor:pointer;font-size:0.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.counter-btn.plus{background:#1e2d44;color:#c8d8f0;}
+.counter-btn.minus{background:#1a1a2e;color:#8090a8;}
+.counter-btn:active{transform:scale(0.9);}
+
+/* STATUS BUTTONS */
+.status-row{display:flex;gap:8px;}
+.status-btn{flex:1;padding:9px 4px;border-radius:8px;border:1px solid #1e2d44;background:#0d1525;color:#4a6080;font-size:0.72rem;font-weight:700;letter-spacing:1px;cursor:pointer;transition:all 0.15s;text-align:center;}
+.status-btn.active-prematch{background:#1e2d44;color:#c8d8f0;border-color:#2a3448;}
+.status-btn.active-live{background:rgba(232,200,110,0.15);color:#e8c86e;border-color:#e8c86e;}
+.status-btn.active-ht{background:rgba(100,180,255,0.1);color:#64b4ff;border-color:#64b4ff;}
+.status-btn.active-ft{background:rgba(76,175,80,0.12);color:#4caf50;border-color:#4caf50;}
+
+/* TOAST */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1e2d44;color:#e0e6f0;padding:10px 20px;border-radius:20px;font-size:0.82rem;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;}
+#toast.show{opacity:1;}
+
+/* RESET BTN */
+.reset-section{margin-top:32px;padding-top:20px;border-top:1px solid #1e2d44;text-align:center;}
+.reset-btn{background:transparent;border:1px solid #ff5252;color:#ff5252;padding:10px 24px;border-radius:8px;font-size:0.82rem;cursor:pointer;}
+
+@media(max-width:420px){
+  .team-name{font-size:0.78rem;}
+  .score-input{width:46px;height:46px;font-size:1.3rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD OVERLAY -->
+<div id="pw-overlay">
+  <h1>⚽ CCT 2026<br>Admin Panel</h1>
+  <p>Enter admin password to continue</p>
+  <input id="pw-input" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPw()">
+  <div id="pw-error">Incorrect password. Try again.</div>
+  <button id="pw-btn" onclick="checkPw()">Unlock</button>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin-panel" style="display:none;">
+  <div class="admin-header">
+    <h1>CCT 2026 · Scores</h1>
+    <div class="sync-status">
+      <div class="sync-dot" id="syncDot"></div>
+      <span id="syncLabel">Connecting…</span>
+    </div>
+  </div>
+
+  <div class="admin-body">
+
+    <div class="phase-label">Group A — Field 3</div>
+    <div id="cards-group-a"></div>
+
+    <div class="phase-label">Group B — Field 4</div>
+    <div id="cards-group-b"></div>
+
+    <div class="phase-label">Knockout Stage</div>
+    <div id="cards-ko"></div>
+
+    <div class="reset-section">
+      <button class="reset-btn" onclick="confirmReset()">Reset All Scores</button>
+    </div>
+    <div style="height:40px;"></div>
+  </div>
+</div>
+
+<div id="toast">Saved ✓</div>
+
+<!-- Firebase -->
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+import { getDatabase, ref, onValue, set, get } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js';
+
+const ADMIN_PASSWORD = 'CCT2026admin';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDJk-ae9kiEXXPYzGh_QyCoDy8jj-HEWmg",
+  authDomain: "cct2026.firebaseapp.com",
+  projectId: "cct2026",
+  storageBucket: "cct2026.firebasestorage.app",
+  messagingSenderId: "199513723345",
+  appId: "1:199513723345:web:d14d469af57819eb9fd0f0",
+  databaseURL: "https://cct2026-default-rtdb.firebaseio.com"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getDatabase(app);
+
+// ── PASSWORD ──
+window.checkPw = function(){
+  const val = document.getElementById('pw-input').value;
+  if(val === ADMIN_PASSWORD){
+    document.getElementById('pw-overlay').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    initAdmin();
+  } else {
+    document.getElementById('pw-error').style.display = 'block';
+    document.getElementById('pw-input').value = '';
+  }
+};
+
+// ── MATCH DATA ──
+const MATCHES = [
+  {id:'gsa1', label:'R1 · 9:00 AM',  home:'MD Strikers',      away:'Washington Khalazis', group:'a'},
+  {id:'gsa2', label:'R2 · 10:20 AM', home:'MD Strikers',      away:'NY Challengers',      group:'a'},
+  {id:'gsa3', label:'R3 · 11:40 AM', home:'Washington Khalazis', away:'NY Challengers',  group:'a'},
+  {id:'gsb1', label:'R1 · 9:00 AM',  home:'Charlotte Minnals', away:'CKSC Warriors',      group:'b'},
+  {id:'gsb2', label:'R2 · 10:20 AM', home:'Charlotte Minnals', away:'CKSC Gladiators',   group:'b'},
+  {id:'gsb3', label:'R3 · 11:40 AM', home:'CKSC Warriors',    away:'CKSC Gladiators',    group:'b'},
+  {id:'sf1',  label:'Semi 1 · 1:00 PM', home:'Winner Grp A',  away:'Runner-Up Grp B',   group:'ko'},
+  {id:'sf2',  label:'Semi 2 · 1:00 PM', home:'Winner Grp B',  away:'Runner-Up Grp A',   group:'ko'},
+  {id:'3rd',  label:'3rd Place · 2:45 PM', home:'Loser Semi 1', away:'Loser Semi 2',     group:'ko'},
+  {id:'fin',  label:'FINAL · 2:45 PM', home:'Winner Semi 1',  away:'Winner Semi 2',      group:'ko'},
+];
+
+let liveScores = {};
+
+function initAdmin(){
+  // Listen for existing data
+  onValue(ref(db, 'scores'), snap => {
+    liveScores = snap.val() || {};
+    renderAllCards();
+    setSyncStatus(true);
+  }, () => setSyncStatus(false));
+}
+
+function setSyncStatus(ok){
+  document.getElementById('syncDot').className = 'sync-dot ' + (ok ? 'ok' : 'err');
+  document.getElementById('syncLabel').textContent = ok ? 'Live' : 'Offline';
+}
+
+function renderAllCards(){
+  renderGroup('a');
+  renderGroup('b');
+  renderGroup('ko');
+}
+
+function renderGroup(grp){
+  const container = document.getElementById('cards-group-' + grp);
+  const matches = MATCHES.filter(m => m.group === grp);
+  container.innerHTML = '';
+  matches.forEach(m => container.appendChild(buildCard(m)));
+}
+
+function buildCard(m){
+  const sc = liveScores[m.id] || {h:'-', a:'-', status:'Pre-Match', yh:0, ya:0, rh:0, ra:0};
+  const hVal = sc.h === '-' ? '' : sc.h;
+  const aVal = sc.a === '-' ? '' : sc.a;
+  const statuses = ['Pre-Match','Live','HT','FT'];
+
+  const card = document.createElement('div');
+  card.className = 'match-card' + (sc.status==='Live'?' live':sc.status==='FT'?' ft':'');
+  card.id = 'card-' + m.id;
+
+  card.innerHTML = `
+    <div class="match-meta"><span>${m.label}</span></div>
+    <div class="score-row">
+      <div class="team-name">${m.home}</div>
+      <input class="score-input" type="number" min="0" max="99" value="${hVal}" placeholder="-" id="sh-${m.id}" oninput="saveScore('${m.id}')">
+      <div class="vs">vs</div>
+      <input class="score-input" type="number" min="0" max="99" value="${aVal}" placeholder="-" id="sa-${m.id}" oninput="saveScore('${m.id}')">
+      <div class="team-name away">${m.away}</div>
+    </div>
+    <div class="cards-row">
+      <div class="card-btn-group">
+        <label>🟡 ${m.home.split(' ')[0]}</label>
+        <div class="card-counter">
+          <button class="counter-btn minus" onclick="adjustCard('${m.id}','yh',-1)">−</button>
+          <span class="card-count yellow" id="yh-${m.id}">${sc.yh||0}</span>
+          <button class="counter-btn plus" onclick="adjustCard('${m.id}','yh',1)">+</button>
+        </div>
+      </div>
+      <div class="card-btn-group">
+        <label>🔴 ${m.home.split(' ')[0]}</label>
+        <div class="card-counter">
+          <button class="counter-btn minus" onclick="adjustCard('${m.id}','rh',-1)">−</button>
+          <span class="card-count red" id="rh-${m.id}">${sc.rh||0}</span>
+          <button class="counter-btn plus" onclick="adjustCard('${m.id}','rh',1)">+</button>
+        </div>
+      </div>
+      <div class="card-btn-group">
+        <label>🟡 ${m.away.split(' ')[0]}</label>
+        <div class="card-counter">
+          <button class="counter-btn minus" onclick="adjustCard('${m.id}','ya',-1)">−</button>
+          <span class="card-count yellow" id="ya-${m.id}">${sc.ya||0}</span>
+          <button class="counter-btn plus" onclick="adjustCard('${m.id}','ya',1)">+</button>
+        </div>
+      </div>
+      <div class="card-btn-group">
+        <label>🔴 ${m.away.split(' ')[0]}</label>
+        <div class="card-counter">
+          <button class="counter-btn minus" onclick="adjustCard('${m.id}','ra',-1)">−</button>
+          <span class="card-count red" id="ra-${m.id}">${sc.ra||0}</span>
+          <button class="counter-btn plus" onclick="adjustCard('${m.id}','ra',1)">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="status-row">
+      ${statuses.map(s => `<button class="status-btn ${sc.status===s?'active-'+s.toLowerCase().replace('-',''):''}" onclick="setStatus('${m.id}','${s}')">${s}</button>`).join('')}
+    </div>
+  `;
+  return card;
+}
+
+function getScore(id){
+  return liveScores[id] || {h:'-', a:'-', status:'Pre-Match', yh:0, ya:0, rh:0, ra:0};
+}
+
+window.saveScore = function(id){
+  const hEl = document.getElementById('sh-'+id);
+  const aEl = document.getElementById('sa-'+id);
+  const sc = getScore(id);
+  sc.h = hEl.value !== '' ? hEl.value : '-';
+  sc.a = aEl.value !== '' ? aEl.value : '-';
+  pushScore(id, sc);
+};
+
+window.setStatus = function(id, status){
+  const sc = getScore(id);
+  sc.status = status;
+  pushScore(id, sc);
+};
+
+window.adjustCard = function(id, field, delta){
+  const sc = getScore(id);
+  sc[field] = Math.max(0, (parseInt(sc[field])||0) + delta);
+  pushScore(id, sc);
+};
+
+function pushScore(id, sc){
+  liveScores[id] = sc;
+  set(ref(db, 'scores/' + id), sc)
+    .then(() => showToast('Saved ✓'))
+    .catch(() => showToast('Error — check connection'));
+  // Refresh just this card
+  const card = document.getElementById('card-' + id);
+  const m = MATCHES.find(x => x.id === id);
+  if(card && m) card.replaceWith(buildCard(m));
+}
+
+window.confirmReset = function(){
+  if(confirm('Reset ALL scores to Pre-Match? This cannot be undone.')){
+    const blank = {};
+    MATCHES.forEach(m => { blank[m.id] = {h:'-',a:'-',status:'Pre-Match',yh:0,ya:0,rh:0,ra:0}; });
+    set(ref(db, 'scores'), blank).then(() => showToast('All scores reset'));
+  }
+};
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+</script>
+</body>
+</html>
